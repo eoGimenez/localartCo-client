@@ -1,0 +1,13 @@
+nav {
+	font-size: 1.6rem;
+	padding: 1.2rem 0.6rem;
+	background-color: var(--primary-color);
+	display: flex;
+	gap: 0.6rem;
+}
+
+.btn--profile {
+	margin-left: auto;
+	font-weight: 600;
+	letter-spacing: -0.04rem;
+}

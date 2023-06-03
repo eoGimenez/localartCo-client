@@ -1,3 +1,25 @@
+:root {
+	--primary-color: #32a37f;
+	--primary-dark: #0a6259;
+	--primary-light: #bedd9a;
+	--pink: #fec9b4;
+	--yellow: #fff4c5;
+	--yellow-darker: #c3b269;
+}
+html {
+	font-size: 62.5%;
+}
 .App {
-  text-align: center;
+	text-align: center;
+}
+
+.btn {
+	border: none;
+	background-color: var(--yellow);
+	border-radius: 8px;
+	padding: 0.7rem 1.4rem;
+}
+
+.btn:hover {
+	background-color: var(--yellow-darker);
 }
