@@ -3,7 +3,7 @@ import axios from 'axios';
 export default class AuthService {
 	constructor() {
 		this.API_URL = axios.create({
-			baseURL: process.env.REACT_APP_SERVER_URL,
+			baseURL: `${process.env.REACT_APP_SERVER_URL}/auth`,
 		});
 		this.API_URL.interceptors.request.use(
 			(config) => {
@@ -22,14 +22,14 @@ export default class AuthService {
 	}
 
 	login = (req) => {
-		return this.API_URL.post('/auth/login', req);
+		return this.API_URL.post('/login', req); 
 	};
 
 	signup = (req) => {
-		return this.API_URL.post('/auth/signup', req);
+		return this.API_URL.post('/signup', req);
 	};
 
 	verify = () => {
-		return this.API_URL.get('/auth/verify');
+		return this.API_URL.get('/verify');
 	};
 }
