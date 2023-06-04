@@ -1,9 +1,22 @@
+#nav--logo {
+	height: 50px;;
+}
+.navbar-toggler{
+	border: none;
+	margin-right: 1rem;
+}
+.active {
+    font-size: 15px;
+}
+.chat{
+    display: grid;
+    align-items: center;  
+}
 nav {
 	font-size: 1.6rem;
-	padding: 1.2rem 0.6rem;
-	background-color: var(--primary-color);
 	display: flex;
 	gap: 0.6rem;
+	margin-bottom: 2rem;
 }
 
 .btn--profile {
