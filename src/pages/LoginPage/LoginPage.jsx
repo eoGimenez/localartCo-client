@@ -21,7 +21,6 @@ function LoginPage() {
 		authService
 			.login({ email, password })
 			.then((response) => {
-				console.log(response)
 				storeToken(response.data.authToken);
 				authenticateUser();
 				navigate('/profile');
@@ -30,7 +29,7 @@ function LoginPage() {
 				console.log(error);
 				const errorDescription = error.response.data.message;
 				setErrorMessage(errorDescription);
-			})
+			});
 	};
 
 	return (

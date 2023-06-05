@@ -38,7 +38,6 @@ function SignupPage() {
 				</fieldset>
 
 				<fieldset>
-					{/* <label>Contraseña:</label> */}
 					<input {...password} placeholder='Contraseña' />
 				</fieldset>
 

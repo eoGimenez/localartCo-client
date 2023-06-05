@@ -12,7 +12,6 @@ function HomePage() {
 		authenticateUser();
 		if (isLoggedIn) navigate('/profile');
 	}, [user]);
-	console.log(user);
 	return (
 		<section className='section--hero'>
 			<h1>Home page</h1>

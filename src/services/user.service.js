@@ -27,8 +27,8 @@ export default class UserService {
 	getOne = async (userId) => {
 		return this.API_URL.get(`/${userId}`);
 	};
-	updateUser = async (userId) => {
-		return this.API_URL.put(`/${userId}`);
+	updateUser = async (userId, req) => {
+		return this.API_URL.put(`/${userId}`, req);
 	};
 	updateCommerce = async (id, req) => {
 		return this.API_URL.post(`/${id}/commerce`, req);
