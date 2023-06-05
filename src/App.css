@@ -1,16 +1,25 @@
 :root {
 	--primary-color: #32a37f;
-	--primary-dark: #0a6259;
+	--primary-dark: #084c45;
 	--primary-light: #bedd9a;
 	--pink: #fec9b4;
 	--yellow: #fff4c5;
 	--yellow-darker: #c3b269;
+
+	--primary-font: #555;
+	--darker-font: #333;
+	--lighter-font: #ddd;
 }
 html {
 	font-size: 62.5%;
 }
-.App {
+#App {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
 	text-align: center;
+	color: var(--primary-font);
+	min-height: 100vh;
+
 }
 
 .btn {

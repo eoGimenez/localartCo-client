@@ -5,13 +5,14 @@ import { AuthContext } from '../../context/auth.context';
 import { Link, useNavigate } from 'react-router-dom';
 
 function HomePage() {
-	const { isLoggedIn, user } = useContext(AuthContext);
+	const { isLoggedIn, user, authenticateUser } = useContext(AuthContext);
 	const navigate = useNavigate();
 
 	useEffect(() => {
+		authenticateUser();
 		if (isLoggedIn) navigate('/profile');
 	}, [user]);
-
+	console.log(user);
 	return (
 		<section className='section--hero'>
 			<h1>Home page</h1>

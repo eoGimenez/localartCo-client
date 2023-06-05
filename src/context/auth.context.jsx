@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import AuthService from '../services/auth.service';
 
-const AuthContext = React.createContext();
+const AuthContext = createContext();
 
 function AuthProviderWrapper({ children }) {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -14,26 +14,32 @@ function AuthProviderWrapper({ children }) {
 	};
 
 	const authenticateUser = () => {
+		setIsLoading(true);
 		const storedToken = localStorage.getItem('authToken');
 
 		if (storedToken) {
 			authService
 				.verify()
 				.then((response) => {
-					const user = response.data;
 					setIsLoggedIn(true);
-					setIsLoading(false);
-					setUser(user);
+					setUser(response.data);
+					setTimeout(() => {
+						setIsLoading(false);
+					}, 1000);
 				})
 				.catch((error) => {
 					setIsLoggedIn(false);
-					setIsLoading(false);
 					setUser(null);
+					setTimeout(() => {
+						setIsLoading(false);
+					}, 1000);
 				});
 		} else {
 			setIsLoggedIn(false);
-			setIsLoading(false);
 			setUser(null);
+			setTimeout(() => {
+				setIsLoading(false);
+			}, 1000);
 		}
 	};
 

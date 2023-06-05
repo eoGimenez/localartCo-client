@@ -21,15 +21,16 @@ function LoginPage() {
 		authService
 			.login({ email, password })
 			.then((response) => {
+				console.log(response)
 				storeToken(response.data.authToken);
 				authenticateUser();
-				navigate('/');
+				navigate('/profile');
 			})
 			.catch((error) => {
 				console.log(error);
 				const errorDescription = error.response.data.message;
 				setErrorMessage(errorDescription);
-			});
+			})
 	};
 
 	return (

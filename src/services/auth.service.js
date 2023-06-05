@@ -21,15 +21,14 @@ export default class AuthService {
 		);
 	}
 
-	login = (req) => {
-		return this.API_URL.post('/login', req); 
-	};
-
-	signup = (req) => {
+	signup(req) {
 		return this.API_URL.post('/signup', req);
-	};
+	}
+	login(req) {
+		return this.API_URL.post('/login', req);
+	}
 
-	verify = () => {
+	verify() {
 		return this.API_URL.get('/verify');
-	};
+	}
 }

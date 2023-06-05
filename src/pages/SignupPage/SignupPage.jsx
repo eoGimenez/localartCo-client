@@ -1,78 +1,84 @@
-import "./SignupPage.css";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import authService from "../../services/auth.service";
+import './SignupPage.css';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useField } from '../../hooks/useField';
+import { useSignup } from '../../hooks/useSignup';
 
 function SignupPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [errorMessage, setErrorMessage] = useState(undefined);
+	const email = useField({ type: 'email', field: '' });
+	const password = useField({ type: 'password', field: '' });
+	const passwordRe = useField({ type: 'password', field: '' });
+	const name = useField({ type: 'text', field: '' });
+	const surname = useField({ type: 'text', field: '' });
+	const commerceName = useField({ type: 'text', field: '' });
+	const role = useField({ type: 'text', field: '' });
+	const cif = useField({ type: 'text', field: '' });
+	const [errorMessage, setErrorMessage] = useState(undefined);
 
-  const navigate = useNavigate();
+	const navigate = useNavigate();
 
-  const handleEmail = (e) => setEmail(e.target.value);
-  const handlePassword = (e) => setPassword(e.target.value);
-  const handleName = (e) => setName(e.target.value);
+	const { handleSignup } = useSignup({
+		email: email.value,
+		password: password.value,
+		passwordRe: passwordRe.value,
+		name: name.value,
+		surname: surname.value,
+		commerceName: commerceName.value,
+		role: role.value,
+		cif: cif.value,
+	});
 
-  const handleSignupSubmit = (e) => {
-    e.preventDefault();
-    // Create an object representing the request body
-    const requestBody = { email, password, name };
+	return (
+		<section className='section--signUp'>
+			<h2>Formulario de registro</h2>
 
-    // Send a request to the server using axios
-    /* 
-    const authToken = localStorage.getItem("authToken");
-    axios.post(
-      `${process.env.REACT_APP_SERVER_URL}/auth/signup`, 
-      requestBody, 
-      { headers: { Authorization: `Bearer ${authToken}` },
-    })
-    .then((response) => {})
-    */
+			<form className='form--signUp' onSubmit={handleSignup}>
+				<fieldset>
+					<input {...email} placeholder='exemplo@email.com' />
+				</fieldset>
 
-    // Or using a service
-    authService
-      .signup(requestBody)
-      .then((response) => {
-        // If the POST request is successful redirect to the login page
-        navigate("/login");
-      })
-      .catch((error) => {
-        // If the request resolves with an error, set the error message in the state
-        const errorDescription = error.response.data.message;
-        setErrorMessage(errorDescription);
-      });
-  };
+				<fieldset>
+					{/* <label>Contraseña:</label> */}
+					<input {...password} placeholder='Contraseña' />
+				</fieldset>
 
-  return (
-    <div className="SignupPage">
-      <h1>Sign Up</h1>
+				<fieldset>
+					<input {...passwordRe} placeholder='Repita contraseña' />
+				</fieldset>
 
-      <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+				<fieldset>
+					<input {...name} placeholder='Fernando' />
+				</fieldset>
 
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
+				<fieldset>
+					<input {...surname} placeholder='Rios Iglesias' />
+				</fieldset>
 
-        <label>Name:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
+				<fieldset>
+					<input {...commerceName} placeholder='Artesanias Fernando' />
+				</fieldset>
 
-        <button type="submit">Sign Up</button>
-      </form>
+				<fieldset>
+					<input {...cif} placeholder='C.I.F' />
+				</fieldset>
 
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+				<fieldset>
+					<select {...role}>
+						<option>Elija su Rol</option>
+						<option value='Artisan'>Artesano</option>
+						<option value='Commerce'>Comercio</option>
+					</select>
+				</fieldset>
 
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
-    </div>
-  );
+				<button type='submit'>Sign Up</button>
+			</form>
+
+			{errorMessage && <p className='error-message'>{errorMessage}</p>}
+
+			<p>Already have account?</p>
+			<Link to={'/login'}> Login</Link>
+		</section>
+	);
 }
 
 export default SignupPage;

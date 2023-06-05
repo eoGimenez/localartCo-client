@@ -1,0 +1,36 @@
+.section--signUp {
+	margin-inline: 1rem;
+}
+.section--signUp h2 {
+	margin-bottom: 1.6rem;
+	font-weight: 500;
+	letter-spacing: -0.04rem;
+}
+
+.form--signUp {
+	font-size: 1.4rem;
+	display: grid;
+	gap: 1rem;
+	margin-bottom: 2.4rem;
+}
+
+.form--signUp fieldset {
+	grid-template-columns: 1fr;
+}
+
+.form--signUp button {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	justify-self: center;
+	border: none;
+	padding: 0.6rem 1.4rem;
+	border-radius: 8px;
+	background-color: var(--primary-light);
+
+	transition: all 0.3s;
+}
+
+.form--signUp button:hover {
+	background-color: var(--primary-dark);
+	color: var(--lighter-font);
+}
