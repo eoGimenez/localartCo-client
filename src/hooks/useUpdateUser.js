@@ -1,6 +1,5 @@
-import { useContext } from 'react';
+import { useState } from 'react';
 import UserService from '../services/user.service';
-import { AuthContext } from '../context/auth.context';
 
 export function useUpdateUser({
 	user,
@@ -12,8 +11,8 @@ export function useUpdateUser({
 	aboutme,
 	location,
 }) {
+	const [updatedUser, setupdatedUser] = useState(user);
 	const userService = new UserService();
-	const { getUser } = useContext(AuthContext);
 
 	const handleUpdate = (e) => {
 		e.preventDefault();
@@ -28,11 +27,10 @@ export function useUpdateUser({
 				location,
 			})
 			.then((response) => {
-				console.log('correcto', response);
-				getUser();
+				setupdatedUser(response.data);
 			})
 			.catch((err) => console.log(err));
 	};
 
-	return { handleUpdate };
+	return { handleUpdate, updatedUser };
 }

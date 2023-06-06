@@ -13,9 +13,7 @@ function AuthProviderWrapper({ children }) {
 		localStorage.setItem('authToken', token);
 	};
 
-	const getUser = () => {
-		authService.verify().then((response) => setUser(response.data));
-	};
+	
 
 	const authenticateUser = () => {
 		setIsLoading(true);
@@ -69,7 +67,7 @@ function AuthProviderWrapper({ children }) {
 				storeToken,
 				authenticateUser,
 				logOutUser,
-				getUser,
+				
 			}}
 		>
 			{children}
