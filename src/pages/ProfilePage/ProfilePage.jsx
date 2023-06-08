@@ -1,16 +1,14 @@
 import { useContext, useEffect, useState } from 'react';
 import './ProfilePage.css';
-import { AuthContext } from '../../context/auth.context';
 import FormUser from '../../components/User/FormUser/FormUser';
 import { UserContext } from '../../context/user.context';
 
 function ProfilePage() {
 	const [firstOn, setFirstOn] = useState(false);
-	const { user } = useContext(AuthContext);
 	const { getUser, userCont, isLoading } = useContext(UserContext);
 
 	useEffect(() => {
-		getUser(user._id);
+		getUser();
 		if (!isLoading) {
 			console.log(userCont);
 			if (userCont.aboutme === 'Actualizar' || userCont.location === 'Seleccione ubicación') {
@@ -20,10 +18,19 @@ function ProfilePage() {
 			}
 		}
 	}, []);
-
+	console.log(userCont);
 	return (
 		<section className='section--profile'>
-			{userCont && <h1>Profile {userCont.name}</h1>}
+			{userCont && !firstOn && (
+				<h1>
+					Profile {userCont.name} {userCont.surname}
+				</h1>
+			)}
+			{userCont && !firstOn && <h3> {userCont.email}</h3>}
+			{userCont && !firstOn && <h3> {userCont.commerceName}</h3>}
+			{userCont && !firstOn && <h3> {userCont.cif}</h3>}
+			{userCont && !firstOn && <h3> {userCont.aboutme}</h3>}
+			{userCont && !firstOn && <h3> {userCont.location}</h3>}
 			{firstOn && <FormUser />}
 		</section>
 	);

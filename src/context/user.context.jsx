@@ -22,9 +22,13 @@ function UserProviderWrapper({ children }) {
 
 	useEffect(() => {
 		getUser();
-	}, []);
+	}, [user]);
 
-	return <UserContext.Provider value={{ getUser, userCont, isLoading }}>{children}</UserContext.Provider>;
+	return (
+		<UserContext.Provider value={{ getUser, userCont, isLoading }}>
+			{children}
+		</UserContext.Provider>
+	);
 }
 
 export { UserProviderWrapper, UserContext };

@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/auth.context';
 import logo from './navbarlogo.png';
+import { UserContext } from '../../context/user.context';
 
 function Navbar() {
-	const { isLoggedIn, user, logOutUser, isLoading } = useContext(AuthContext);
+	const { isLoggedIn, logOutUser } = useContext(AuthContext);
+	const { getUser, userCont, isLoading } = useContext(UserContext);
 
 	return (
 		<nav className='navbar navbar-expand-lg bg-body-tertiary'>
@@ -29,14 +31,14 @@ function Navbar() {
 						<div className='collapse navbar-collapse' id='navbarSupportedContent'>
 							<ul className='navbar-nav me-auto mb-2 mb-lg-0'>
 								<li className='nav-item mx-3'>
-									<Link to={`/profile/${user._id}`} className='active'>
+									<Link to={`/profile/`} className='active'>
 										<p className='active'>
 											<i className='fa-solid fa-user '></i>Profile
 											<br />
 										</p>
 									</Link>
 								</li>
-								{user.role === 'Artisan' && (
+								{userCont.role === 'Artisan' && (
 									<li className='nav-item mx-3'>
 										<Link to='/post/new' className='active'>
 											<p className='active'>
