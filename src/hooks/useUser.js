@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import UserService from '../services/user.service';
 
-export function useUser() {
+export const useUser = () => {
 	const { user, setUser } = useState(null);
 	const userService = new UserService();
 
@@ -17,4 +17,4 @@ export function useUser() {
 	}, []);
 
 	return { user };
-}
+};
