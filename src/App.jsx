@@ -9,6 +9,8 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import Navbar from './components/Navbar/Navbar';
 import IsPrivate from './components/IsPrivate/IsPrivate';
 import IsAnon from './components/IsAnon/IsAnon';
+import PostPage from './pages/PostPage/PostPage';
+import NewPostPage from './pages/NewPostPage/NewPostPage';
 
 function App() {
 	return (
@@ -23,6 +25,25 @@ function App() {
 					element={
 						<IsPrivate>
 							<ProfilePage />
+						</IsPrivate>
+					}
+				/>
+
+				<Route
+					path='/posts'
+					element={
+						<IsPrivate>
+							<PostPage />
+						</IsPrivate>
+					}
+				/>
+
+				<Route
+					path='/post/new'
+					element={
+						<IsPrivate>
+							{' '}
+							<NewPostPage />{' '}
 						</IsPrivate>
 					}
 				/>

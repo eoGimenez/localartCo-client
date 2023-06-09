@@ -48,7 +48,7 @@ function Navbar() {
 									</li>
 								)}
 								<li className='nav-item mx-3'>
-									<Link to='/post' className=''>
+									<Link to='/posts' className=''>
 										<p className='active'>
 											<i className='fa-solid fa-signs-post'></i> Craft
 										</p>

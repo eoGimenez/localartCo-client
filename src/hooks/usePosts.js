@@ -1,19 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import PostService from '../services/post.service';
+import { UserContext } from '../context/user.context';
 
 export default function usePosts() {
+	const { userCont } = useContext(UserContext);
 	const [posts, setPosts] = useState([]);
 	const postService = new PostService();
 
 	const getPosts = () => {
 		postService
 			.getAll()
-			.then((response) => setPosts(response))
+			.then((response) => setPosts(response.data))
 			.catch((err) => console.log(err));
 	};
 
 	useEffect(() => {
 		getPosts();
-	}, [posts]);
+	}, [userCont]);
 	return { posts };
 }
