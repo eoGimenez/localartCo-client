@@ -29,7 +29,6 @@ export default function FormUser() {
 			.then((result) => getUser())
 			.catch((err) => console.log(err));
 	};
-	console.log(userCont);
 	return (
 		<section className='section--form--user'>
 			<h2>Complete datos</h2>

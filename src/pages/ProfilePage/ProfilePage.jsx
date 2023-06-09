@@ -9,8 +9,8 @@ function ProfilePage() {
 
 	useEffect(() => {
 		getUser();
+		console.log('dentro del effect',userCont);
 		if (!isLoading) {
-			console.log(userCont);
 			if (userCont.aboutme === 'Actualizar' || userCont.location === 'Seleccione ubicación') {
 				setFirstOn(true);
 			} else {
@@ -18,7 +18,9 @@ function ProfilePage() {
 			}
 		}
 	}, []);
-	console.log(userCont);
+
+	console.log(userCont, firstOn, isLoading);
+
 	return (
 		<section className='section--profile'>
 			{userCont && !firstOn && (

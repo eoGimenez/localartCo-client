@@ -19,10 +19,10 @@ function UserProviderWrapper({ children }) {
 			});
 		}
 	};
-
 	useEffect(() => {
 		getUser();
-	}, [user]);
+		console.log('effecto del context', userCont);
+	}, []);
 
 	return (
 		<UserContext.Provider value={{ getUser, userCont, isLoading }}>

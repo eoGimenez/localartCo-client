@@ -1,21 +1,16 @@
 import './NewPostForm.css';
-// import { useContext } from 'react';
-// import { UserContext } from '../../../context/user.context';
 import { useField } from '../../../hooks/useField';
 import { useFile } from '../../../hooks/useFile';
 import { usePost } from '../../../hooks/usePost';
 
 export default function NewPostForm() {
-	// const { userCont } = useContext(UserContext);
-
-	// const author = useField({ type: 'text', field: userCont._id });
 	const title = useField({ type: 'text', field: '' });
 	const batch = useField({ type: 'numbre', field: '' });
 	const category = useField({ type: 'text', field: '' });
 	const contract = useField({ type: 'text', field: '' });
 	const description = useField({ type: 'text', field: '' });
 	const price = useField({ type: 'number', field: '' });
-	const image = useFile({ type: 'file' });
+	const { value, onChange } = useFile({ type: 'file' });
 
 	const { handleNewPost } = usePost({
 		title: title.value,
@@ -24,8 +19,9 @@ export default function NewPostForm() {
 		contract: contract.value,
 		description: description.value,
 		price: price.value,
-		image: image,
+		image: value,
 	});
+
 	return (
 		<div className='new--post--form--container'>
 			<h2>Crea tu nuevo producto a ofertar!</h2>
@@ -43,7 +39,8 @@ export default function NewPostForm() {
 					<input {...price} placeholder='Precio por unidad' required />
 				</fieldset>
 				<fieldset>
-					<input {...image} required />
+					{!value && <input type='file' onChange={onChange} required />}
+					{value && <h3>Imagen correcta</h3>}
 				</fieldset>
 				<fieldset>
 					<select {...contract} required>

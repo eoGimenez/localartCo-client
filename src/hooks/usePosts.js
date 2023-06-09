@@ -10,7 +10,7 @@ export default function usePosts() {
 	const getPosts = () => {
 		postService
 			.getAll()
-			.then((response) => setPosts(response.data))
+			.then((response) => setPosts(response.data.reverse()))
 			.catch((err) => console.log(err));
 	};
 
