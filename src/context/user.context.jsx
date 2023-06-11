@@ -5,14 +5,14 @@ import { AuthContext } from './auth.context';
 const UserContext = createContext();
 
 function UserProviderWrapper({ children }) {
-	const { user } = useContext(AuthContext);
+	const { user, isLoggedIn } = useContext(AuthContext);
 
 	const [isLoading, setIsLoading] = useState(true);
 	const [userCont, setUserCont] = useState(null);
 	const userService = new UserService();
 
-	const getUser = () => {
-		if (isLoading && user) {
+	const getUser = async () => {
+		if (user) {
 			userService.getOne(user._id).then((result) => {
 				setUserCont(result.data);
 				setIsLoading(false);
@@ -20,9 +20,13 @@ function UserProviderWrapper({ children }) {
 		}
 	};
 	useEffect(() => {
-		getUser();
-		console.log('effecto del context', userCont);
-	}, []);
+		try {
+			getUser();
+			console.log('effecto del context', userCont);
+		} catch {
+			console.log('entro en el catch');
+		}
+	}, [isLoggedIn]);
 
 	return (
 		<UserContext.Provider value={{ getUser, userCont, isLoading }}>

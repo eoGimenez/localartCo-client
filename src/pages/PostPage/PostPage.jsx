@@ -1,5 +1,5 @@
 import PostCard from '../../components/Posts/PostCard/PostCard';
-import usePosts from '../../hooks/usePosts';
+import { usePosts } from '../../hooks/usePosts';
 import './PostPage.css';
 
 export default function PostPage() {

@@ -1,7 +1,7 @@
 import './NewPostForm.css';
 import { useField } from '../../../hooks/useField';
 import { useFile } from '../../../hooks/useFile';
-import { usePost } from '../../../hooks/usePost';
+import { usePosts } from '../../../hooks/usePosts';
 
 export default function NewPostForm() {
 	const title = useField({ type: 'text', field: '' });
@@ -11,16 +11,20 @@ export default function NewPostForm() {
 	const description = useField({ type: 'text', field: '' });
 	const price = useField({ type: 'number', field: '' });
 	const { value, onChange } = useFile({ type: 'file' });
+	const { createPost } = usePosts();
 
-	const { handleNewPost } = usePost({
-		title: title.value,
-		batch: batch.value,
-		category: category.value,
-		contract: contract.value,
-		description: description.value,
-		price: price.value,
-		image: value,
-	});
+	const handleNewPost = async (e) => {
+		e.preventDefault();
+		createPost({
+			title: title.value,
+			batch: batch.value,
+			category: category.value,
+			contract: contract.value,
+			description: description.value,
+			price: price.value,
+			image: value,
+		}).catch(() => console.log('error al crear post'));
+	};
 
 	return (
 		<div className='new--post--form--container'>

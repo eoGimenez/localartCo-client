@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import UserService from '../services/user.service';
 
 export const useUser = () => {
-	const { user, setUser } = useState(null);
+	const { userCont, setUserCont } = useState(null);
 	const userService = new UserService();
 
 	useEffect(() => {
@@ -11,10 +11,10 @@ export const useUser = () => {
 			const user = JSON.parse(userJSON);
 			userService
 				.getOne(user._id)
-				.then((response) => setUser(response))
+				.then((response) => setUserCont(response))
 				.catch((err) => console.log(err));
 		}
 	}, []);
 
-	return { user };
+	return { userCont };
 };
