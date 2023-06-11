@@ -9,8 +9,7 @@ export function usePosts() {
 	const postService = new PostService();
 	const navigate = useNavigate();
 
-
-	const getPosts = () => {
+	const getPosts = async () => {
 		postService
 			.getAll()
 			.then((response) => setPosts(response.data.reverse()))
@@ -37,8 +36,13 @@ export function usePosts() {
 	};
 
 	const deletPost = async (postId) => {
-		return postService.deleteOne(postId);
+		return postService.deleteOne(postId).then((result) => {
+			// console.log("esta entrando en el then", result)
+			// getPosts();
+			// console.log("devuelve esto",posts)
+			navigate('/posts');
+		});
 	};
 
-	return { posts, createPost };
+	return { posts, createPost, deletPost };
 }

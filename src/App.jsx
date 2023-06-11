@@ -11,6 +11,7 @@ import IsPrivate from './components/IsPrivate/IsPrivate';
 import IsAnon from './components/IsAnon/IsAnon';
 import PostPage from './pages/PostPage/PostPage';
 import NewPostPage from './pages/NewPostPage/NewPostPage';
+import PostDetailPage from './pages/PostDetailPage/PostDetailPage';
 
 function App() {
 	return (
@@ -39,11 +40,19 @@ function App() {
 				/>
 
 				<Route
+					path='/post/:postId'
+					element={
+						<IsPrivate>
+							<PostDetailPage />
+						</IsPrivate>
+					}
+				/>
+
+				<Route
 					path='/post/new'
 					element={
 						<IsPrivate>
-							{' '}
-							<NewPostPage />{' '}
+							<NewPostPage />
 						</IsPrivate>
 					}
 				/>

@@ -1,11 +1,16 @@
-import './PostCard.css'
+import { useNavigate } from 'react-router-dom';
+import './PostCard.css';
 
 export default function PostCard({ post }) {
+	const navigate = useNavigate();
+	const handleClick = () => {
+		navigate(`/post/${post._id}`);
+	};
 	return (
-		<div className='post--card'>
+		<div className='post--card' onClick={handleClick}>
 			<h2>{post.title}</h2>
-            <h3>{post.contract}</h3>
-            <p>{post.category}</p>
+			<h3>{post.contract}</h3>
+			<p>{post.category}</p>
 			<p>{post.description}</p>
 			<table>
 				<thead>
@@ -23,7 +28,7 @@ export default function PostCard({ post }) {
 					</tr>
 				</tbody>
 			</table>
-            <h4>{post.author.commercename}</h4>
+			<h4>{post.author.commercename}</h4>
 		</div>
 	);
 }
