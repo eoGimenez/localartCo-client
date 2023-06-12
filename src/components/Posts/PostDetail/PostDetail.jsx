@@ -1,20 +1,6 @@
-import { useEffect } from 'react';
-import { usePosts } from '../../../hooks/usePosts';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-export default function PostDetail() {
-	const { postId } = useParams();
-	const { deletPost } = usePosts();
-	const { getPost, currentPost } = usePosts();
-
-	const handleDelete = () => {
-		deletPost(postId).catch(() => console.log('no se pudo borrar'));
-	};
-
-	useEffect(() => {
-		getPost(postId).catch('surgio un problema!');
-	}, []);
-
+export default function PostDetail({ currentPost }) {
 	return (
 		<>
 			{currentPost && (
@@ -30,7 +16,7 @@ export default function PostDetail() {
 							<br />
 						</p>
 					</Link>
-					<button onClick={handleDelete}>Borrar Post</button>
+					{/* <button onClick={handleDelete}>Borrar Post</button> */}
 				</div>
 			)}
 		</>

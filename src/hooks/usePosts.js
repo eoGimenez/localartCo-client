@@ -16,7 +16,7 @@ export function usePosts() {
 			.then((response) => setPosts(response.data.reverse()))
 			.catch((err) => console.log(err));
 	};
-	
+
 	const getPost = async (postId) => {
 		if (!currentPost) {
 			return postService.getOne(postId).then((response) => {
@@ -53,5 +53,22 @@ export function usePosts() {
 		});
 	};
 
-	return { posts, createPost, deletPost, getPost, currentPost };
+	const updatePost = async (
+		postId,
+		{ title, batch, category, contract, description, price, image }
+	) => {
+		return postService
+			.udpateOne(postId, {
+				title,
+				batch,
+				category,
+				contract,
+				description,
+				price,
+				image,
+			})
+			.then((response) => setCurrentPost(response.data));
+	};
+
+	return { posts, createPost, deletPost, getPost, updatePost, currentPost };
 }
