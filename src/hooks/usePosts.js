@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 export function usePosts() {
 	const { userCont } = useContext(UserContext);
 	const [posts, setPosts] = useState([]);
+	const [currentPost, setCurrentPost] = useState(null);
 	const postService = new PostService();
 	const navigate = useNavigate();
 
@@ -14,6 +15,14 @@ export function usePosts() {
 			.getAll()
 			.then((response) => setPosts(response.data.reverse()))
 			.catch((err) => console.log(err));
+	};
+	
+	const getPost = async (postId) => {
+		if (!currentPost) {
+			return postService.getOne(postId).then((response) => {
+				setCurrentPost(response.data);
+			});
+		}
 	};
 
 	useEffect(() => {
@@ -44,5 +53,5 @@ export function usePosts() {
 		});
 	};
 
-	return { posts, createPost, deletPost };
+	return { posts, createPost, deletPost, getPost, currentPost };
 }

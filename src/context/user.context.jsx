@@ -22,7 +22,6 @@ function UserProviderWrapper({ children }) {
 	useEffect(() => {
 		try {
 			getUser();
-			console.log('effecto del context', userCont);
 		} catch {
 			console.log('entro en el catch');
 		}
