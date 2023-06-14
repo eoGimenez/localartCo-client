@@ -8,7 +8,7 @@ import PostUpdate from '../../components/Posts/PostUpdate/PostUpdate';
 export default function PostDetailPage() {
 	const [update, setUpdate] = useState(false);
 	const { postId } = useParams();
-	const { deletPost, getPost, updatePost, currentPost } = usePosts();
+	const { deletPost, getPost, currentPost } = usePosts();
 	const { userCont } = useContext(UserContext);
 
 	const handleDelete = () => {
@@ -43,7 +43,7 @@ export default function PostDetailPage() {
 				</>
 			)}
 			{update && (
-				<PostUpdate currentPost={currentPost} handleForm={handleForm} update={update} />
+				<PostUpdate currentPost={currentPost} handleForm={handleForm} />
 			)}
 		</section>
 	);

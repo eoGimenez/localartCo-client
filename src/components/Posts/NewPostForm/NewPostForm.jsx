@@ -65,6 +65,7 @@ export default function NewPostForm() {
 				</fieldset>
 				<button>Crear articulo</button>
 			</form>
+			{value && <img src={value} alt='Imagen cargada para el articulo'/>}
 		</div>
 	);
 }
