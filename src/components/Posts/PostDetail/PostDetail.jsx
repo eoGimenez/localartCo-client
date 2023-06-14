@@ -10,6 +10,7 @@ export default function PostDetail({ currentPost }) {
 					<h3>{currentPost.contract}</h3>
 					<p>{currentPost.category}</p>
 					<p>{currentPost.description}</p>
+					<p>price: {currentPost.price}</p>
 					<Link to={`/posts`} className='active'>
 						<p className='active'>
 							<i className='fa-solid fa-signs-post'></i>Craft

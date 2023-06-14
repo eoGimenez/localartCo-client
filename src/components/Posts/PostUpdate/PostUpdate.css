@@ -1,3 +1,11 @@
+.update--post--form {
+	margin-bottom: 2rem;
+}
+
 .update--post--form img {
-    width: 25rem;
+	width: 25rem;
+}
+
+.update--post--form fieldset {
+	margin-bottom: 1rem;
 }

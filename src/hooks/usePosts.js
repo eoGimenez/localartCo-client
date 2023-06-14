@@ -7,6 +7,7 @@ export function usePosts() {
 	const { userCont } = useContext(UserContext);
 	const [posts, setPosts] = useState([]);
 	const [currentPost, setCurrentPost] = useState(null);
+	const [messageError, setMessageError] = useState('');
 	const postService = new PostService();
 	const navigate = useNavigate();
 
@@ -67,8 +68,12 @@ export function usePosts() {
 				price,
 				image,
 			})
-			.then((response) => setCurrentPost(response.data));
+			.then((response) => {
+				setCurrentPost(response.data);
+				navigate('/posts');
+			})
+			.catch((err) => setMessageError(err));
 	};
 
-	return { posts, createPost, deletPost, getPost, updatePost, currentPost };
+	return { posts, createPost, deletPost, getPost, updatePost, currentPost, messageError };
 }

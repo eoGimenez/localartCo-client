@@ -4,18 +4,18 @@ import { usePosts } from '../../../hooks/usePosts';
 import './PostUpdate.css';
 
 export default function PostUpdate({ currentPost, handleForm }) {
-	const { updatePost } = usePosts();
+	const { updatePost, messageError } = usePosts();
 	const title = useField({ type: 'text', field: currentPost.title });
 	const batch = useField({ type: 'numbre', field: currentPost.batch });
 	const category = useField({ type: 'text', field: currentPost.category });
 	const contract = useField({ type: 'text', field: currentPost.contract });
 	const description = useField({ type: 'text', field: currentPost.description });
-	const price = useField({ type: 'number', field: currentPost.field });
+	const price = useField({ type: 'number', field: currentPost.price });
 	const { value, onChange } = useFile({ type: 'file' });
 
 	const handleUpdatePost = (e) => {
 		e.preventDefault();
-		updatePost({
+		updatePost(currentPost._id, {
 			title: title.value,
 			batch: batch.value,
 			category: category.value,
@@ -25,21 +25,26 @@ export default function PostUpdate({ currentPost, handleForm }) {
 			image: currentPost.image,
 		});
 	};
+	console.log(messageError);
 
 	return (
 		<section className='section--post--update'>
 			<h2>Editando el articulo " {title.value} "</h2>
 			<form className='update--post--form' onSubmit={handleUpdatePost}>
 				<fieldset>
+					<label>Titulo</label>
 					<input {...title} placeholder='Nombre del producto' required />
 				</fieldset>
 				<fieldset>
+					<label>Descripción</label>
 					<textarea {...description} placeholder='Descripción' required />
 				</fieldset>
 				<fieldset>
+					<label>Stock</label>
 					<input {...batch} placeholder='Stock' required />
 				</fieldset>
 				<fieldset>
+					<label>Precio</label>
 					<input {...price} placeholder={price.value} required />
 				</fieldset>
 				<fieldset>
