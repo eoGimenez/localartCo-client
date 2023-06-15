@@ -70,7 +70,7 @@ export default function PostUpdate({ currentPost, handleForm }) {
 						<option>Fabric & Fashion</option>
 					</select>
 				</fieldset>
-				<button>Crear articulo</button>
+				<button>Actualizar articulo</button>
 			</form>
 			<p
 				onClick={() => {

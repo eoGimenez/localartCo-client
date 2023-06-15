@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import './ProfilePage.css';
 import FormUser from '../../components/User/FormUser/FormUser';
 import { UserContext } from '../../context/user.context';
+import InBox from '../../components/ChatBox/inBox';
 
 function ProfilePage() {
 	const [firstOn, setFirstOn] = useState(false);
@@ -9,7 +10,7 @@ function ProfilePage() {
 
 	useEffect(() => {
 		getUser();
-		console.log('dentro del effect',userCont);
+		console.log('dentro del effect', userCont);
 		if (!isLoading) {
 			if (userCont.aboutme === 'Actualizar' || userCont.location === 'Seleccione ubicación') {
 				setFirstOn(true);
@@ -33,6 +34,7 @@ function ProfilePage() {
 			{userCont && !firstOn && <h3> {userCont.cif}</h3>}
 			{userCont && !firstOn && <h3> {userCont.aboutme}</h3>}
 			{userCont && !firstOn && <h3> {userCont.location}</h3>}
+			{userCont && !firstOn && <InBox />}
 			{firstOn && <FormUser />}
 		</section>
 	);

@@ -4,6 +4,7 @@ import { usePosts } from '../../hooks/usePosts';
 import { useParams } from 'react-router-dom';
 import { UserContext } from '../../context/user.context';
 import PostUpdate from '../../components/Posts/PostUpdate/PostUpdate';
+import ChatBox from '../../components/ChatBox/ChatBox';
 
 export default function PostDetailPage() {
 	const [update, setUpdate] = useState(false);
@@ -36,15 +37,16 @@ export default function PostDetailPage() {
 									handleForm(true);
 								}}
 							>
-								Edit Post
+								Editar Post
 							</button>
 						</div>
 					) : null}
+					{currentPost && currentPost.author._id !== userCont._id ? (
+						<ChatBox author={currentPost.author} />
+					) : null}
 				</>
 			)}
-			{update && (
-				<PostUpdate currentPost={currentPost} handleForm={handleForm} />
-			)}
+			{update && <PostUpdate currentPost={currentPost} handleForm={handleForm} />}
 		</section>
 	);
 }

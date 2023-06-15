@@ -1,0 +1,9 @@
+.chat {
+	max-width: 24rem;
+}
+
+.chat--inbox {
+	margin-inline: auto;
+	height: 50rem;
+	width: 30rem;
+}
