@@ -8,27 +8,21 @@ export default function PostCard({ post }) {
 	};
 	return (
 		<div className='post--card' onClick={handleClick}>
-			<h2>{post.title}</h2>
-			<h3>{post.contract}</h3>
-			<p>{post.category}</p>
-			<p>{post.description}</p>
-			<table>
-				<thead>
-					<tr>
-						<th>Cantidad</th>
-						<th>Precio ud</th>
-						<th>En stock</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>{post.batch}</td>
-						<td>{post.price}</td>
-						<td>{post.available ? <p>En Stock!</p> : <p>Sin Stock!</p>}</td>
-					</tr>
-				</tbody>
-			</table>
-			<h4>{post.author.commercename}</h4>
+			<div className='image--container'>
+				<img src={post.image} alt={'La imagen del articulo: ' + post.title} />
+			</div>
+			<div className='card--container'>
+				<h2 className='post card--title'>{post.title}</h2>
+				<h3 className='post card--contract'>{post.contract}</h3>
+				<p className='post card--category'>{post.category}</p>
+				<p className='post card--description'>{post.description}</p>
+				<div>
+					<p>Precio: {post.price}</p>
+					<p>Cantidad unidades: {post.batch}</p>
+					
+				</div>
+				<h4>{post.author.commercename}</h4>
+			</div>
 		</div>
 	);
 }

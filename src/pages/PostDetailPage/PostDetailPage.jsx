@@ -42,7 +42,9 @@ export default function PostDetailPage() {
 						</div>
 					) : null}
 					{currentPost && currentPost.author._id !== userCont._id ? (
-						<ChatBox author={currentPost.author} />
+						<div className='post--detail--buttons--noOwner'>
+							<ChatBox author={currentPost.author} />
+						</div>
 					) : null}
 				</>
 			)}
