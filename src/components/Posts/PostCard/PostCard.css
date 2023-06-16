@@ -7,12 +7,36 @@
 	box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
 	border-radius: 11px;
 	overflow: hidden;
+	text-align: start;
+}
+.image--container {
+	margin-inline: auto;
+	margin-bottom: 1.2rem;
 }
 .image--container img {
-	max-height: 30rem;
 	max-width: 20rem;
+	border-radius: 8px;
 }
 
 .card--container:has(.post) {
 	font-size: 1.4rem;
+}
+.card--description {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+.card--container h4 {
+	font-size: 1.8rem;
+	font-weight: 600;
+	color: var(--darker-font);
+	letter-spacing: -0.04rem;
+	line-height: 1.2;
+	text-align: center;
+}
+.card--container h4 span {
+	font-size: 1.6rem;
+	font-weight: 400;
+	
 }

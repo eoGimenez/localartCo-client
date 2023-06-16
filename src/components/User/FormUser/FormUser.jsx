@@ -55,7 +55,7 @@ export default function FormUser() {
 					</fieldset>
 
 					<fieldset>
-						<input {...aboutme} placeholder={aboutme.value} />
+						<textarea {...aboutme} placeholder={aboutme.value} />
 					</fieldset>
 
 					<fieldset>

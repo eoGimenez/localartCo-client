@@ -3,6 +3,8 @@ import './ProfilePage.css';
 import FormUser from '../../components/User/FormUser/FormUser';
 import { UserContext } from '../../context/user.context';
 import InBox from '../../components/ChatBox/inBox';
+import Profile from '../../components/User/Porfile/Profile';
+import PostPorfile from '../../components/User/PostProfile/PostProfile';
 
 function ProfilePage() {
 	const [firstOn, setFirstOn] = useState(false);
@@ -10,9 +12,8 @@ function ProfilePage() {
 
 	useEffect(() => {
 		getUser();
-		console.log('dentro del effect', userCont);
 		if (!isLoading) {
-			if (userCont.aboutme === 'Actualizar' || userCont.location === 'Seleccione ubicación') {
+			if (userCont.aboutme === 'About me' || userCont.location === 'Seleccione ubicación') {
 				setFirstOn(true);
 			} else {
 				setFirstOn(false);
@@ -20,20 +21,10 @@ function ProfilePage() {
 		}
 	}, []);
 
-	console.log(userCont, firstOn, isLoading);
-
 	return (
 		<section className='section--profile'>
-			{userCont && !firstOn && (
-				<h1>
-					Profile {userCont.name} {userCont.surname}
-				</h1>
-			)}
-			{userCont && !firstOn && <h3> {userCont.email}</h3>}
-			{userCont && !firstOn && <h3> {userCont.commerceName}</h3>}
-			{userCont && !firstOn && <h3> {userCont.cif}</h3>}
-			{userCont && !firstOn && <h3> {userCont.aboutme}</h3>}
-			{userCont && !firstOn && <h3> {userCont.location}</h3>}
+			{userCont && !firstOn && <Profile userCont={userCont} />}
+			{userCont && !firstOn && <PostPorfile userCont={userCont} />} 
 			{userCont && !firstOn && <InBox />}
 			{firstOn && <FormUser />}
 		</section>

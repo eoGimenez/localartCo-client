@@ -19,9 +19,12 @@ export default function PostCard({ post }) {
 				<div>
 					<p>Precio: {post.price}</p>
 					<p>Cantidad unidades: {post.batch}</p>
-					
 				</div>
-				<h4>{post.author.commercename}</h4>
+				{post.author.commerceName && (
+					<h4>
+						<span>Artesano:</span> <br /> {post.author.commerceName}
+					</h4>
+				)}
 			</div>
 		</div>
 	);

@@ -13,8 +13,6 @@ export default function InBox() {
 		setTalkLoaded(true);
 	});
 
-	console.log(process.env.REACT_APP_YOUR_APP_ID);
-
 	useEffect(() => {
 		if (talkLoaded) {
 			const currentUser = new Talk.User({
@@ -30,7 +28,6 @@ export default function InBox() {
 				appId: process.env.REACT_APP_YOUR_APP_ID,
 				me: currentUser,
 			});
-			console.log('CURRENT USER: ', userCont);
 			// const chatId = userCont.chatsId[0];
 			const chat = session.getInboxes();
 			const inBox = session.createInbox();
