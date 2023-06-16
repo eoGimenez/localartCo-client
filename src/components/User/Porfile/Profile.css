@@ -37,7 +37,7 @@
 	max-height: 100%;
 	border-radius: 8px;
 }
-
+.btn--update--profile,
 .btn--update--profile:link,
 .btn--update--profile:visited {
 	font-family: 'Poppins', sans-serif;

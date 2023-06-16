@@ -6,13 +6,13 @@
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
 
-
 :root {
 	--primary-color: #32a37f;
 	--primary-dark: #084c45;
 	--primary-light: #bedd9a;
 	--pink: #fec9b4;
 	--yellow: #fff4c5;
+	--yellow-light: #f8f3dd;
 	--yellow-darker: #c3b269;
 
 	--primary-font: #555;
@@ -28,8 +28,12 @@ html {
 	text-align: center;
 	color: var(--primary-font);
 	min-height: 100vh;
-
 }
+*:focus {
+	outline: none;
+	box-shadow: 0 0 0 0.4rem var(--yellow);
+	border-radius: 9px;
+  }
 
 .btn {
 	border: none;

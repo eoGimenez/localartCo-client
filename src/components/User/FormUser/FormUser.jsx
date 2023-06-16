@@ -3,6 +3,7 @@ import { useField } from '../../../hooks/useField';
 import './FormUser.css';
 import UserService from '../../../services/user.service';
 import { UserContext } from '../../../context/user.context';
+import { useFile } from '../../../hooks/useFile';
 
 export default function FormUser() {
 	const { getUser, userCont, isLoading } = useContext(UserContext);
@@ -13,6 +14,7 @@ export default function FormUser() {
 	const cif = useField({ type: 'text', field: userCont.cif });
 	const aboutme = useField({ type: 'textarea', field: userCont.aboutme });
 	const location = useField({ type: 'text', field: userCont.location });
+	const { value, onChange } = useFile({ type: 'file' });
 	const userService = new UserService();
 
 	const handleUpdate = () => {
@@ -25,6 +27,7 @@ export default function FormUser() {
 				cif: cif.value,
 				aboutme: aboutme.value,
 				location: location.value,
+				avatar: value,
 			})
 			.then((result) => getUser())
 			.catch((err) => console.log(err));
@@ -52,6 +55,11 @@ export default function FormUser() {
 
 					<fieldset>
 						<input {...cif} placeholder={cif.value} />
+					</fieldset>
+
+					<fieldset>
+						{!value && <input type='file' onChange={onChange} required />}
+						{value && <h3>Imagen correcta</h3>}
 					</fieldset>
 
 					<fieldset>

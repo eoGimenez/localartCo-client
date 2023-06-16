@@ -17,6 +17,21 @@
 .form--complete--datos fieldset {
 	grid-template-columns: 1fr;
 }
+.form--complete--datos input,
+.form--complete--datos textarea{
+	font-family: inherit;
+	color: inherit;
+	width: 100%;
+	padding: 1.2rem;
+	border: none;
+	background-color: var(--yellow-light);
+	border-radius: 9px;
+	resize: none;
+}
+
+.form--complete--datos textarea {
+	height: 10rem;
+}
 
 .form--complete--datos button {
 	font-family: 'Poppins', sans-serif;
