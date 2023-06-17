@@ -21,6 +21,7 @@
 }
 html {
 	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 #App {
 	font-family: 'Poppins', sans-serif;
@@ -33,7 +34,7 @@ html {
 	outline: none;
 	box-shadow: 0 0 0 0.4rem var(--yellow);
 	border-radius: 9px;
-  }
+}
 
 .btn {
 	border: none;

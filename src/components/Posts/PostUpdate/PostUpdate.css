@@ -1,11 +1,66 @@
 .update--post--form {
-	margin-bottom: 2rem;
-}
-
-.update--post--form img {
-	width: 25rem;
+	font-size: 1.4rem;
+	display: grid;
+	gap: 1rem;
+	margin-bottom: 2.4rem;
 }
 
 .update--post--form fieldset {
+	grid-template-columns: 1fr;
+}
+
+.update--post--form label {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.6rem;
+	margin-bottom: 0.7rem;
+	font-weight: 500;
+	letter-spacing: -0.04rem;
+}
+
+.update--post--form input,
+.update--post--form textarea,
+.update--post--form select {
+	font-family: inherit;
+	color: inherit;
+	width: 100%;
+	padding: 1.2rem;
+	border: none;
+	background-color: var(--yellow-light);
+	border-radius: 9px;
+	resize: none;
 	margin-bottom: 1rem;
+}
+
+.update--post--form textarea {
+	height: 10rem;
+}
+.update--post--form img {
+	max-width: 25rem;
+	margin-bottom: 1rem;
+}
+
+.update--post--volver,
+.update--post--form button {
+	display: inline-block;
+	border: none;
+	font-family: 'Poppins', sans-serif;
+	padding: 0.6rem 1.4rem;
+	font-size: 1.4rem;
+	font-weight: 500;
+	letter-spacing: -0.03rem;
+	color: var(--darker-font);
+	background-color: var(--primary-light);
+	border-radius: 8px;
+
+	transition: all 0.3s;
+}
+.update--post--form button {
+	width: 16rem;
+	justify-self: center;
+}
+
+.update--post--volver:hover,
+.update--post--form button:hover {
+	background-color: var(--primary-dark);
+	color: var(--lighter-font);
 }

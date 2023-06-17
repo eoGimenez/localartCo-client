@@ -1,21 +1,22 @@
-
 import PostCard from '../../components/Posts/PostCard/PostCard';
+import PostFilter from '../../components/Posts/PostFilter/PostFilter';
+import { useCategory } from '../../hooks/useCategory';
 import { usePosts } from '../../hooks/usePosts';
 import './PostPage.css';
 
-
 export default function PostPage() {
 	const { posts } = usePosts();
+	const { pickCategory, postFiltered } = useCategory();
+
+	const handleCategory = (selectedCategory) => {
+		pickCategory(selectedCategory);
+	};
 
 	return (
 		<section className='section--posts'>
-			{posts &&
-				posts.map((post) => (
-					<PostCard
-						post={post}
-						key={post._id}
-					/>
-				))}
+			<PostFilter handleCategory={handleCategory} />
+			{posts && !postFiltered && posts.map((post) => <PostCard post={post} key={post._id} />)}
+			{postFiltered && postFiltered.map((post) => <PostCard post={post} key={post._id} />)}
 		</section>
 	);
 }

@@ -1,0 +1,22 @@
+.filter--container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	margin-inline: auto;
+	max-width: 90vw;
+}
+.category--container p {
+	font-size: 1.4rem;
+    justify-self: center;
+    align-self: center;
+}
+
+.category--container {
+	max-width: 9rem;
+}
+.category--container img {
+	max-width: 100%;
+	margin-bottom: 1.4rem;
+}
+
+
+

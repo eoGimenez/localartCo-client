@@ -22,10 +22,9 @@ export default function PostUpdate({ currentPost, handleForm }) {
 			contract: contract.value,
 			description: description.value,
 			price: price.value,
-			image: currentPost.image,
+			image: value,
 		});
 	};
-	console.log(messageError);
 
 	return (
 		<section className='section--post--update'>
@@ -48,8 +47,9 @@ export default function PostUpdate({ currentPost, handleForm }) {
 					<input {...price} placeholder={price.value} required />
 				</fieldset>
 				<fieldset>
-					{!currentPost.image && <input type='file' onChange={onChange} required />}
-					{currentPost.image && (
+					{!value && <input type='file' onChange={onChange} required />}
+					{value && <img src={value} alt='The new file selected' />}
+					{currentPost.image && !value && (
 						<img src={currentPost.image} alt='Imagen cargada para el articulo' />
 					)}
 				</fieldset>
@@ -73,6 +73,7 @@ export default function PostUpdate({ currentPost, handleForm }) {
 				<button>Actualizar articulo</button>
 			</form>
 			<p
+				className='update--post--volver'
 				onClick={() => {
 					handleForm(false);
 				}}

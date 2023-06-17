@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { UserContext } from '../../context/user.context';
 import PostUpdate from '../../components/Posts/PostUpdate/PostUpdate';
 import ChatBox from '../../components/ChatBox/ChatBox';
+import './PostDetailPage.css'
 
 export default function PostDetailPage() {
 	const [update, setUpdate] = useState(false);
