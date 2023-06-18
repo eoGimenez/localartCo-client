@@ -3,7 +3,7 @@
 	grid-template-columns: repeat(4, 1fr);
 	margin-inline: auto;
 	max-width: 90vw;
-	
+	margin-bottom: 2.4rem;
 }
 .category--container p {
 	font-size: 1.4rem;
@@ -17,6 +17,8 @@
 .category--container img {
 	max-width: 100%;
 	margin-bottom: 1.4rem;
+
+	transition: all 0.3s;
 }
 
 @media (min-width: 25em) {
@@ -35,11 +37,16 @@
 	}
 }
 @media (min-width: 41.5em) {
-	
 	.category--container {
 		max-width: 15rem;
 	}
 	.category--container img {
 		max-width: 15rem;
+	}
+}
+@media (min-width: 62em) {
+	.filter--container img:hover {
+		border-radius: 8px;
+		transform: scale(1.1);
 	}
 }

@@ -65,3 +65,28 @@
 		max-width: 30rem;
 	}
 }
+@media (min-width: 87.5em) {
+	.profile--container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		max-width: 70rem;
+		padding-inline: 4rem;
+		gap: 1rem;
+	}
+	.profile--container h2 {
+		font-size: 4rem;
+		grid-column: 1 / -1;
+		align-self: center;
+		justify-self: center;
+	}
+	.profile--img--container img {
+		border-radius: 8px;
+	}
+	.profile--info--container {
+		margin-left: 4rem;
+	}
+	.btn--update--profile {
+		grid-column: 1 / -1;
+
+	}
+}

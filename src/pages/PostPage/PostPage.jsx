@@ -15,7 +15,11 @@ export default function PostPage() {
 	return (
 		<section className='section--posts'>
 			<PostFilter handleCategory={handleCategory} />
-			{posts && !postFiltered && posts.map((post) => <PostCard post={post} key={post._id} />)}
+			<div className='post--card--container'>
+				{posts &&
+					!postFiltered &&
+					posts.map((post) => <PostCard post={post} key={post._id} />)}
+			</div>
 			{postFiltered && postFiltered.map((post) => <PostCard post={post} key={post._id} />)}
 		</section>
 	);

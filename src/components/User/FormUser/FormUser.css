@@ -18,7 +18,7 @@
 	grid-template-columns: 1fr;
 }
 .form--complete--datos input,
-.form--complete--datos textarea{
+.form--complete--datos textarea {
 	font-family: inherit;
 	color: inherit;
 	width: 100%;
@@ -48,4 +48,12 @@
 .form--complete--datos button:hover {
 	background-color: var(--primary-dark);
 	color: var(--lighter-font);
+}
+
+@media (min-width: 87.5em) {
+	.section--form--user {
+		grid-column: 1/-1;
+		max-width: 70rem;
+		padding-inline: 4rem;
+	}
 }

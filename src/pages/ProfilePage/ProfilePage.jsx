@@ -4,7 +4,7 @@ import FormUser from '../../components/User/FormUser/FormUser';
 import { UserContext } from '../../context/user.context';
 import InBox from '../../components/ChatBox/inBox';
 import Profile from '../../components/User/Porfile/Profile';
-import PostPorfile from '../../components/Posts/PostProfile/PostProfile';
+import PostCard from '../../components/Posts/PostCard/PostCard';
 
 function ProfilePage() {
 	const [firstOn, setFirstOn] = useState(false);
@@ -24,7 +24,9 @@ function ProfilePage() {
 	return (
 		<section className='section--profile'>
 			{userCont && !firstOn && <Profile userCont={userCont} />}
-			{userCont && !firstOn && <PostPorfile userCont={userCont} />}
+			{userCont &&
+				!firstOn &&
+				userCont.posts.reverse().map((post) => <PostCard post={post} key={post._id} />)}
 			{userCont && !firstOn && <InBox />}
 			{firstOn && <FormUser />}
 		</section>
