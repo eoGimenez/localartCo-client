@@ -12,6 +12,7 @@ import IsAnon from './components/IsAnon/IsAnon';
 import PostPage from './pages/PostPage/PostPage';
 import NewPostPage from './pages/NewPostPage/NewPostPage';
 import PostDetailPage from './pages/PostDetailPage/PostDetailPage';
+import Footer from './components/Footer/Footer';
 
 function App() {
 	return (
@@ -74,6 +75,7 @@ function App() {
 					}
 				/>
 			</Routes>
+			<Footer />
 		</div>
 	);
 }

@@ -1,3 +1,57 @@
+.new--post--form--container {
+	font-size: 1.4rem;
+	display: grid;
+	gap: 1rem;
+	margin-bottom: 2.4rem;
+	margin-inline: auto;
+	max-width: 35rem;
+}
+.new--post--form--containerr h2 {
+	margin-bottom: 1.6rem;
+	font-weight: 500;
+	letter-spacing: -0.04rem;
+}
+
+.new--post--form {
+	font-size: 1.4rem;
+	display: grid;
+	gap: 1rem;
+	margin-bottom: 2.4rem;
+}
+
 .new--post--form fieldset {
-    margin-bottom: 1rem;
+	grid-template-columns: 1fr;
+}
+.new--post--form input,
+.new--post--form textarea,
+.new--post--form select {
+	font-family: inherit;
+	color: inherit;
+	width: 100%;
+	padding: 1.2rem;
+	border: none;
+	background-color: var(--yellow-light);
+	border-radius: 9px;
+	resize: none;
+}
+
+.new--post--form textarea {
+	height: 10rem;
+}
+
+.new--post--form button {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	justify-self: center;
+	border: none;
+	padding: 0.6rem 1.4rem;
+	border-radius: 8px;
+	background-color: var(--primary-light);
+
+	transition: all 0.3s;
+}
+
+.new--post--form button:hover {
+	background-color: var(--primary-dark);
+	color: var(--lighter-font);
 }

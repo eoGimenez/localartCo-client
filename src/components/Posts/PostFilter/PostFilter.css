@@ -3,11 +3,12 @@
 	grid-template-columns: repeat(4, 1fr);
 	margin-inline: auto;
 	max-width: 90vw;
+	
 }
 .category--container p {
 	font-size: 1.4rem;
-    justify-self: center;
-    align-self: center;
+	justify-self: center;
+	align-self: center;
 }
 
 .category--container {
@@ -18,5 +19,27 @@
 	margin-bottom: 1.4rem;
 }
 
-
-
+@media (min-width: 25em) {
+	.filter--container {
+		display: flex;
+		flex-direction: row;
+		margin-inline: auto;
+		justify-content: center;
+		/* align-items: center; */
+	}
+	.category--container {
+		max-width: 12rem;
+	}
+	.category--container img {
+		max-width: 12rem;
+	}
+}
+@media (min-width: 41.5em) {
+	
+	.category--container {
+		max-width: 15rem;
+	}
+	.category--container img {
+		max-width: 15rem;
+	}
+}

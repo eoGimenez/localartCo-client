@@ -1,16 +1,27 @@
 #nav--logo {
-	height: 50px;;
+	height: 50px;
 }
-.navbar-toggler{
+.navbar-toggler {
 	border: none;
 	margin-right: 1rem;
 }
+
 .active {
-    font-size: 15px;
+	font-size: 15px;
+	text-decoration: none;
+	color: var(--darker--font);
+	font-weight: 500;
+	font-size: 1.4rem;
 }
-.chat{
-    display: grid;
-    align-items: center;  
+.active i {
+	margin-right: 0.7rem;
+}
+.active:focus {
+	box-shadow: 0 0 0 0 var(--yellow);
+}
+.chat {
+	display: grid;
+	align-items: center;
 }
 nav {
 	font-size: 1.6rem;
@@ -18,9 +29,48 @@ nav {
 	gap: 0.6rem;
 	margin-bottom: 2rem;
 }
+.collapse li {
+	list-style: none;
+}
 
-.btn--profile {
-	margin-left: auto;
-	font-weight: 600;
-	letter-spacing: -0.04rem;
+.btn--logout {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	margin-inline: auto;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	border: none;
+	padding: 0.6rem 1.4rem;
+	border-radius: 8px;
+	background-color: var(--primary-light);
+
+	transition: all 0.3s;
+}
+.btn--logout:hover {
+	background-color: var(--primary-dark);
+	color: var(--lighter-font);
+}
+
+.btn--logout p {
+	margin: 0;
+}
+
+@media (min-width: 62em) {
+	#nav--logo {
+		margin-left: 3rem;
+	}
+
+	.navbar {
+		height: 7rem;
+	}
+	.navbar-nav {
+		margin-left: 3rem !important;
+	}
+	.navbar-nav p {
+		margin-bottom: 0;
+	}
+	.btn--logout {
+		margin-right: 3rem;
+	}
 }

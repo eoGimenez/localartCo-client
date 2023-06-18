@@ -5,7 +5,7 @@ import { usePosts } from '../../../hooks/usePosts';
 
 export default function NewPostForm() {
 	const title = useField({ type: 'text', field: '' });
-	const batch = useField({ type: 'numbre', field: '' });
+	const batch = useField({ type: 'number', field: '' });
 	const category = useField({ type: 'text', field: '' });
 	const contract = useField({ type: 'text', field: '' });
 	const description = useField({ type: 'text', field: '' });
@@ -28,7 +28,7 @@ export default function NewPostForm() {
 
 	return (
 		<div className='new--post--form--container'>
-			<h2>Crea tu nuevo producto a ofertar!</h2>
+			<h2>Publica tu artesania!</h2>
 			<form className='new--post--form' onSubmit={handleNewPost}>
 				<fieldset>
 					<input {...title} placeholder='Nombre del producto' required />
@@ -65,7 +65,7 @@ export default function NewPostForm() {
 				</fieldset>
 				<button>Crear articulo</button>
 			</form>
-			{value && <img src={value} alt='Imagen cargada para el articulo'/>}
+			{value && <img src={value} alt='Imagen cargada para el articulo' />}
 		</div>
 	);
 }

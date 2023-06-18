@@ -3,6 +3,7 @@
 }
 
 .chat--inbox {
+	margin-bottom: 2rem;
 	margin-inline: auto;
 	height: 50rem;
 	width: 30rem;

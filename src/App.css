@@ -29,6 +29,9 @@ html {
 	text-align: center;
 	color: var(--primary-font);
 	min-height: 100vh;
+	
+
+	display: grid;
 }
 *:focus {
 	outline: none;

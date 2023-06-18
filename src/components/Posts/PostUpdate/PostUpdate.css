@@ -37,6 +37,7 @@
 .update--post--form img {
 	max-width: 25rem;
 	margin-bottom: 1rem;
+	border-radius: 11px;
 }
 
 .update--post--volver,

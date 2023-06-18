@@ -7,7 +7,7 @@ import { UserContext } from '../../context/user.context';
 
 function Navbar() {
 	const { isLoggedIn, logOutUser } = useContext(AuthContext);
-	const { getUser, userCont, isLoading } = useContext(UserContext);
+	const { userCont, isLoading } = useContext(UserContext);
 
 	return (
 		<nav className='navbar navbar-expand-lg bg-body-tertiary'>
@@ -48,7 +48,7 @@ function Navbar() {
 									</li>
 								)}
 								<li className='nav-item mx-3'>
-									<Link to='/posts' className=''>
+									<Link to='/posts' className='active'>
 										<p className='active'>
 											<i className='fa-solid fa-signs-post'></i> Craft
 										</p>
@@ -57,7 +57,7 @@ function Navbar() {
 							</ul>
 							<ul>
 								<li>
-									<button onClick={logOutUser} className='active mx-5'>
+									<button onClick={logOutUser} className='btn btn--logout'>
 										<p className='active'>
 											<i className='fa-solid fa-right-from-bracket'></i> Log
 											Out
