@@ -3,7 +3,7 @@ import axios from 'axios';
 export default class AuthService {
   constructor() {
     this.API_URL = axios.create({
-      baseURL: `${process.env.REACT_APP_SERVER_URL}/auth`,
+      baseURL: `${process.env.REACT_APP_SERVER_URL}/api/auth`,
     });
     this.API_URL.interceptors.request.use(
       (config) => {
