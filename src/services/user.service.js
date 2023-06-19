@@ -3,7 +3,7 @@ import axios from 'axios';
 export default class UserService {
   constructor() {
     this.API_URL = axios.create({
-      baseURL: `${process.env.REACT_APP_SERVER_URL}/user`,
+      baseURL: `${process.env.REACT_APP_SERVER_URL}/api/user`,
     });
     this.API_URL.interceptors.request.use(
       (config) => {
