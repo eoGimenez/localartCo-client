@@ -5,22 +5,23 @@ import { usePosts } from '../../hooks/usePosts';
 import './PostPage.css';
 
 export default function PostPage() {
-	const { posts } = usePosts();
-	const { pickCategory, postFiltered } = useCategory();
+  const { posts } = usePosts();
+  const { pickCategory, postFiltered } = useCategory();
 
-	const handleCategory = (selectedCategory) => {
-		pickCategory(selectedCategory);
-	};
+  const handleCategory = (selectedCategory) => {
+    pickCategory(selectedCategory);
+  };
 
-	return (
-		<section className='section--posts'>
-			<PostFilter handleCategory={handleCategory} />
-			<div className='post--card--container'>
-				{posts &&
-					!postFiltered &&
-					posts.map((post) => <PostCard post={post} key={post._id} />)}
-			</div>
-			{postFiltered && postFiltered.map((post) => <PostCard post={post} key={post._id} />)}
-		</section>
-	);
+  return (
+    <section className='section--posts'>
+      <PostFilter handleCategory={handleCategory} />
+      <div className='post--card--container'>
+        {posts &&
+          !postFiltered &&
+          posts.map((post) => <PostCard post={post} key={post._id} />)}
+      </div>
+      {postFiltered &&
+        postFiltered.map((post) => <PostCard post={post} key={post._id} />)}
+    </section>
+  );
 }

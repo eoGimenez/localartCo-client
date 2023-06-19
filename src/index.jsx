@@ -9,11 +9,11 @@ import { UserProviderWrapper } from './context/user.context';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-	<Router>
-		<AuthProviderWrapper>
-			<UserProviderWrapper>
-				<App />
-			</UserProviderWrapper>
-		</AuthProviderWrapper>
-	</Router>
+  <Router>
+    <AuthProviderWrapper>
+      <UserProviderWrapper>
+        <App />
+      </UserProviderWrapper>
+    </AuthProviderWrapper>
+  </Router>
 );

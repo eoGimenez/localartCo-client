@@ -1,92 +1,92 @@
 .profile--container {
-	margin-bottom: 4.4rem;
-	font-family: 'Poppins', sans-serif;
-	max-width: 30rem;
-	margin-inline: auto;
-	color: var(--primary-font);
-	box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
-	padding: 1rem 2rem;
-	border-radius: 11px;
-	overflow: hidden;
-	font-weight: 500;
+  margin-bottom: 4.4rem;
+  font-family: 'Poppins', sans-serif;
+  max-width: 30rem;
+  margin-inline: auto;
+  color: var(--primary-font);
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  padding: 1rem 2rem;
+  border-radius: 11px;
+  overflow: hidden;
+  font-weight: 500;
 }
 .profile--container h2 {
-	font-size: 2.4rem;
-	text-align: start;
+  font-size: 2.4rem;
+  text-align: start;
 }
 .profile--container h3 {
-	font-size: 2rem;
-	text-align: start;
+  font-size: 2rem;
+  text-align: start;
 }
 .profile--container h4 {
-	font-size: 1.8rem;
-	text-align: start;
+  font-size: 1.8rem;
+  text-align: start;
 }
 .profile--container p {
-	font-size: 1.2rem;
-	text-align: start;
+  font-size: 1.2rem;
+  text-align: start;
 }
 .profile--img--container {
-	max-width: 20rem;
-	margin-inline: auto;
-	margin-bottom: 1.4rem;
+  max-width: 20rem;
+  margin-inline: auto;
+  margin-bottom: 1.4rem;
 }
 
 .profile--img--container img {
-	max-width: 100%;
-	max-height: 100%;
-	border-radius: 50%;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
 }
 .btn--update--profile,
 .btn--update--profile:link,
 .btn--update--profile:visited {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 500;
-	justify-self: center;
-	border: none;
-	padding: 0.7rem 1.4rem;
-	border-radius: 8px;
-	background-color: var(--primary-light);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  justify-self: center;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  background-color: var(--primary-light);
 
-	transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .btn--update--profile:hover,
 .btn--update--profile:active {
-	background-color: var(--primary-dark);
-	color: var(--lighter-font);
+  background-color: var(--primary-dark);
+  color: var(--lighter-font);
 }
 
 @media (min-width: 34em) {
-	.profile--container {
-		max-width: 44rem;
-	}
-	.profile--img--container {
-		max-width: 30rem;
-	}
+  .profile--container {
+    max-width: 44rem;
+  }
+  .profile--img--container {
+    max-width: 30rem;
+  }
 }
 @media (min-width: 87.5em) {
-	.profile--container {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		max-width: 70rem;
-		padding-inline: 4rem;
-		gap: 1rem;
-	}
-	.profile--container h2 {
-		font-size: 4rem;
-		grid-column: 1 / -1;
-		align-self: center;
-		justify-self: center;
-	}
-	.profile--img--container img {
-		border-radius: 8px;
-	}
-	.profile--info--container {
-		margin-left: 4rem;
-	}
-	.btn--update--profile {
-		grid-column: 1 / -1;
-		align-self: center;
-	}
+  .profile--container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 70rem;
+    padding-inline: 4rem;
+    gap: 1rem;
+  }
+  .profile--container h2 {
+    font-size: 4rem;
+    grid-column: 1 / -1;
+    align-self: center;
+    justify-self: center;
+  }
+  .profile--img--container img {
+    border-radius: 8px;
+  }
+  .profile--info--container {
+    margin-left: 4rem;
+  }
+  .btn--update--profile {
+    grid-column: 1 / -1;
+    align-self: center;
+  }
 }

@@ -7,45 +7,44 @@
 */
 
 :root {
-	--primary-color: #32a37f;
-	--primary-dark: #084c45;
-	--primary-light: #bedd9a;
-	--pink: #fec9b4;
-	--yellow: #fff4c5;
-	--yellow-light: #f8f3dd;
-	--yellow-darker: #c3b269;
+  --primary-color: #32a37f;
+  --primary-dark: #084c45;
+  --primary-light: #bedd9a;
+  --pink: #fec9b4;
+  --yellow: #fff4c5;
+  --yellow-light: #f8f3dd;
+  --yellow-darker: #c3b269;
 
-	--primary-font: #555;
-	--darker-font: #333;
-	--lighter-font: #ddd;
+  --primary-font: #555;
+  --darker-font: #333;
+  --lighter-font: #ddd;
 }
 html {
-	font-size: 62.5%;
-	scroll-behavior: smooth;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 #App {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 400;
-	text-align: center;
-	color: var(--primary-font);
-	min-height: 100vh;
-	
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  color: var(--primary-font);
+  min-height: 100vh;
 
-	display: grid;
+  display: grid;
 }
 *:focus {
-	outline: none;
-	box-shadow: 0 0 0 0.4rem var(--yellow);
-	border-radius: 9px;
+  outline: none;
+  box-shadow: 0 0 0 0.4rem var(--yellow);
+  border-radius: 9px;
 }
 
 .btn {
-	border: none;
-	background-color: var(--yellow);
-	border-radius: 8px;
-	padding: 0.7rem 1.4rem;
+  border: none;
+  background-color: var(--yellow);
+  border-radius: 8px;
+  padding: 0.7rem 1.4rem;
 }
 
 .btn:hover {
-	background-color: var(--yellow-darker);
+  background-color: var(--yellow-darker);
 }

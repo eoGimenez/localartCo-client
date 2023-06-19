@@ -15,69 +15,69 @@ import PostDetailPage from './pages/PostDetailPage/PostDetailPage';
 import Footer from './components/Footer/Footer';
 
 function App() {
-	return (
-		<div id='App'>
-			<Navbar />
+  return (
+    <div id='App'>
+      <Navbar />
 
-			<Routes>
-				<Route path='/' element={<HomePage />} />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
 
-				<Route
-					path='/profile'
-					element={
-						<IsPrivate>
-							<ProfilePage />
-						</IsPrivate>
-					}
-				/>
+        <Route
+          path='/profile'
+          element={
+            <IsPrivate>
+              <ProfilePage />
+            </IsPrivate>
+          }
+        />
 
-				<Route
-					path='/posts'
-					element={
-						<IsPrivate>
-							<PostPage />
-						</IsPrivate>
-					}
-				/>
+        <Route
+          path='/posts'
+          element={
+            <IsPrivate>
+              <PostPage />
+            </IsPrivate>
+          }
+        />
 
-				<Route
-					path='/post/:postId'
-					element={
-						<IsPrivate>
-							<PostDetailPage />
-						</IsPrivate>
-					}
-				/>
+        <Route
+          path='/post/:postId'
+          element={
+            <IsPrivate>
+              <PostDetailPage />
+            </IsPrivate>
+          }
+        />
 
-				<Route
-					path='/post/new'
-					element={
-						<IsPrivate>
-							<NewPostPage />
-						</IsPrivate>
-					}
-				/>
+        <Route
+          path='/post/new'
+          element={
+            <IsPrivate>
+              <NewPostPage />
+            </IsPrivate>
+          }
+        />
 
-				<Route
-					path='/signup'
-					element={
-						<IsAnon>
-							<SignupPage />
-						</IsAnon>
-					}
-				/>
-				<Route
-					path='/login'
-					element={
-						<IsAnon>
-							<LoginPage />
-						</IsAnon>
-					}
-				/>
-			</Routes>
-			<Footer />
-		</div>
-	);
+        <Route
+          path='/signup'
+          element={
+            <IsAnon>
+              <SignupPage />
+            </IsAnon>
+          }
+        />
+        <Route
+          path='/login'
+          element={
+            <IsAnon>
+              <LoginPage />
+            </IsAnon>
+          }
+        />
+      </Routes>
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

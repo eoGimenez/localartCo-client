@@ -1,52 +1,52 @@
 .filter--container {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	margin-inline: auto;
-	max-width: 90vw;
-	margin-bottom: 2.4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-inline: auto;
+  max-width: 90vw;
+  margin-bottom: 2.4rem;
 }
 .category--container p {
-	font-size: 1.4rem;
-	justify-self: center;
-	align-self: center;
+  font-size: 1.4rem;
+  justify-self: center;
+  align-self: center;
 }
 
 .category--container {
-	max-width: 9rem;
+  max-width: 9rem;
 }
 .category--container img {
-	max-width: 100%;
-	margin-bottom: 1.4rem;
+  max-width: 100%;
+  margin-bottom: 1.4rem;
 
-	transition: transform 0.3s;
+  transition: transform 0.3s;
 }
 
 @media (min-width: 25em) {
-	.filter--container {
-		display: flex;
-		flex-direction: row;
-		margin-inline: auto;
-		justify-content: center;
-		/* align-items: center; */
-	}
-	.category--container {
-		max-width: 12rem;
-	}
-	.category--container img {
-		max-width: 12rem;
-	}
+  .filter--container {
+    display: flex;
+    flex-direction: row;
+    margin-inline: auto;
+    justify-content: center;
+    /* align-items: center; */
+  }
+  .category--container {
+    max-width: 12rem;
+  }
+  .category--container img {
+    max-width: 12rem;
+  }
 }
 @media (min-width: 41.5em) {
-	.category--container {
-		max-width: 15rem;
-	}
-	.category--container img {
-		max-width: 15rem;
-	}
+  .category--container {
+    max-width: 15rem;
+  }
+  .category--container img {
+    max-width: 15rem;
+  }
 }
 @media (min-width: 62em) {
-	.filter--container img:hover {
-		border-radius: 8px;
-		transform: scale(1.1);
-	}
+  .filter--container img:hover {
+    border-radius: 8px;
+    transform: scale(1.1);
+  }
 }
