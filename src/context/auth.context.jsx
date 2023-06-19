@@ -33,6 +33,7 @@ function AuthProviderWrapper({ children }) {
           setTimeout(() => {
             setIsLoading(false);
           }, 1000);
+          return { message: error };
         });
     } else {
       setIsLoggedIn(false);

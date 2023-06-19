@@ -14,7 +14,7 @@ function HomePage() {
   }, [user]);
   return (
     <section className='section--hero'>
-      <h1>Home page</h1>
+      <h1>Bienvenido a localArt CO</h1>
       <HomeVideo />
       <h2 className='home--secondheader'>
         {' '}

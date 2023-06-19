@@ -4,7 +4,7 @@ import { usePosts } from '../../../hooks/usePosts';
 import './PostUpdate.css';
 
 export default function PostUpdate({ currentPost, handleForm }) {
-  const { updatePost, messageError } = usePosts();
+  const { updatePost } = usePosts();
   const title = useField({ type: 'text', field: currentPost.title });
   const batch = useField({ type: 'numbre', field: currentPost.batch });
   const category = useField({ type: 'text', field: currentPost.category });
@@ -31,7 +31,7 @@ export default function PostUpdate({ currentPost, handleForm }) {
 
   return (
     <section className='section--post--update'>
-      <h2>Editando el articulo " {title.value} "</h2>
+      <h2>Editando el articulo {title.value}</h2>
       <form className='update--post--form' onSubmit={handleUpdatePost}>
         <fieldset>
           <label>Titulo</label>

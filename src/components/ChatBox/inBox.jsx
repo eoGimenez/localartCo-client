@@ -28,10 +28,9 @@ export default function InBox() {
         appId: process.env.REACT_APP_YOUR_APP_ID,
         me: currentUser,
       });
-      // const chatId = userCont.chatsId[0];
+      // eslint-disable-next-line
       const chat = session.getInboxes();
       const inBox = session.createInbox();
-      // inBox.select(chatId);
 
       inBox.mount(inBoxDiv.current);
 

@@ -20,5 +20,5 @@ export function useCategory() {
       return newCategory;
     });
   };
-  return { pickCategory, postFiltered };
+  return { pickCategory, postFiltered, category };
 }
