@@ -4,8 +4,7 @@ import imgMis from './Mis.jpg';
 import imgNatural from './NC.jpg';
 import './PostFilter.css';
 
-export default function PostFilter({handleCategory}) {
-
+export default function PostFilter({ handleCategory }) {
 	return (
 		<div className='filter--container'>
 			<div className='category--container' onClick={() => handleCategory('Home Deco')}>
@@ -15,7 +14,10 @@ export default function PostFilter({handleCategory}) {
 				/>
 				<p>Decoración Hogar</p>
 			</div>
-			<div className='category--container' onClick={() => handleCategory('Natural Cosmetics')}>
+			<div
+				className='category--container'
+				onClick={() => handleCategory('Natural Cosmetics')}
+			>
 				<img
 					src={imgNatural}
 					alt='Varios instrumentos del cuidado de la piel, categoría: Cosmetica Natural'

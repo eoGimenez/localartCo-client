@@ -44,7 +44,7 @@
 	font-weight: 500;
 	justify-self: center;
 	border: none;
-	padding: 0.6rem 1.4rem;
+	padding: 0.7rem 1.4rem;
 	border-radius: 8px;
 	background-color: var(--primary-light);
 
@@ -87,6 +87,6 @@
 	}
 	.btn--update--profile {
 		grid-column: 1 / -1;
-
+		align-self: center;
 	}
 }
