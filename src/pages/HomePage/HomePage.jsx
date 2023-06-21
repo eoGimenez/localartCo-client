@@ -15,23 +15,24 @@ function HomePage() {
   return (
     <section className='section--hero'>
       <h1>Bienvenido a localArt CO</h1>
-      <HomeVideo />
       <h2 className='home--secondheader'>
         {' '}
-        Local Art Co. connects artisans with physical stores. <br />
-        Artisans leave their products in consignment, set the price, and stores
-        sell the products and earn a percentage.
+        En Local Art Co. conectamos artesanos con tiendas físicas.
         <br />
-        We guarantee a fair deal for all parties involved.
+        Los artesanos dejan sus productos en consignación, establecen el precio
+        y las tiendas se encargan de vender los productos y ganar un porcentaje.
+        <br />
+        Garantizamos un trato justo para todas las partes involucradas.
       </h2>
+      <HomeVideo />
       <div className='auth--container'>
         <Link to='/signup'>
           {' '}
-          <button className='btn btn--link'>Sign Up</button>{' '}
+          <button className='btn btn--link'>Registrarse</button>{' '}
         </Link>
         <Link to='/login'>
           {' '}
-          <button className='btn btn--link'>Login</button>{' '}
+          <button className='btn btn--link'>Acceder</button>{' '}
         </Link>
       </div>
     </section>

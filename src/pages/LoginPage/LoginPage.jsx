@@ -33,28 +33,30 @@ function LoginPage() {
   };
 
   return (
-    <div className='LoginPage'>
+    <section className='section--login'>
       <h1>Login</h1>
 
-      <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
-        <input type='email' name='email' value={email} onChange={handleEmail} />
+      <form className='form--login' onSubmit={handleLoginSubmit}>
+        
+        <input type='email' name='email' value={email} onChange={handleEmail} placeholder='email@ejemplo.com' required />
 
-        <label>Password:</label>
+        
         <input
           type='password'
           name='password'
           value={password}
           onChange={handlePassword}
+          placeholder='Contraseña'
+          required
         />
 
         <button type='submit'>Login</button>
       </form>
       {errorMessage && <p className='error-message'>{errorMessage}</p>}
 
-      <p>Don`t have an account yet?</p>
-      <Link to={'/signup'}> Sign Up</Link>
-    </div>
+      <p>Aun no tienes cuenta ?</p>
+      <Link className='signup--link--login' to={'/signup'}> Crear cuenta</Link>
+    </section>
   );
 }
 

@@ -10,12 +10,29 @@
 .form--signUp {
   font-size: 1.4rem;
   display: grid;
-  gap: 1rem;
+  gap: 1.4rem;
   margin-bottom: 2.4rem;
 }
 
 .form--signUp fieldset {
   grid-template-columns: 1fr;
+}
+
+.form--signUp select,
+.form--signUp input,
+.form--signUp textarea {
+  font-family: inherit;
+  color: inherit;
+  width: 28rem;
+  padding: 1.2rem;
+  border: none;
+  background-color: var(--yellow-light);
+  border-radius: 9px;
+  resize: none;
+}
+
+.form--signUp textarea {
+  height: 10rem;
 }
 
 .form--signUp button {
@@ -33,4 +50,29 @@
 .form--signUp button:hover {
   background-color: var(--primary-dark);
   color: var(--lighter-font);
+}
+
+.section--signUp p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.signup--link--login:link,
+.signup--link--login:visited {
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  color: var(--primary-dark);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: -0.03rem;
+  padding: .6rem 1.2rem;
+  border-radius: 9px;
+
+  transition: all 0.3s;
+}
+
+.signup--link--login:hover,
+.signup--link--login:active {
+  background-color: var(--yellow-light);
 }

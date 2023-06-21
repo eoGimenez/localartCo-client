@@ -1,5 +1,11 @@
 .section--hero h1 {
   margin-bottom: 2rem;
+  font-size: 3rem;
+  letter-spacing: -0.04rem;
+  font-weight: 600;
+}
+.section--hero h2 {
+  font-size: 1.6rem;
 }
 .home--secondheader {
   margin-block: 2rem;
