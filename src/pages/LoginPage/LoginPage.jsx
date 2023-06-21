@@ -37,10 +37,15 @@ function LoginPage() {
       <h1>Login</h1>
 
       <form className='form--login' onSubmit={handleLoginSubmit}>
-        
-        <input type='email' name='email' value={email} onChange={handleEmail} placeholder='email@ejemplo.com' required />
+        <input
+          type='email'
+          name='email'
+          value={email}
+          onChange={handleEmail}
+          placeholder='email@ejemplo.com'
+          required
+        />
 
-        
         <input
           type='password'
           name='password'
@@ -55,7 +60,10 @@ function LoginPage() {
       {errorMessage && <p className='error-message'>{errorMessage}</p>}
 
       <p>Aun no tienes cuenta ?</p>
-      <Link className='signup--link--login' to={'/signup'}> Crear cuenta</Link>
+      <Link className='signup--link--login' to={'/signup'}>
+        {' '}
+        Crear cuenta
+      </Link>
     </section>
   );
 }

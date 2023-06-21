@@ -94,7 +94,10 @@ function SignupPage() {
       {errorMessage && <p className='error-message'>{errorMessage}</p>}
 
       <p>Ya tienes cuenta?</p>
-      <Link className='signup--link--login' to={'/login'}> Acceder </Link>
+      <Link className='signup--link--login' to={'/login'}>
+        {' '}
+        Acceder{' '}
+      </Link>
     </section>
   );
 }
