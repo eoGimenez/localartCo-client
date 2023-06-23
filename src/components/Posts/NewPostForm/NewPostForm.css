@@ -55,3 +55,7 @@
   background-color: var(--primary-dark);
   color: var(--lighter-font);
 }
+.new--post--form img {
+  max-width: 20rem;
+  max-height: 20rem;
+}

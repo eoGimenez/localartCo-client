@@ -13,6 +13,7 @@ import PostPage from './pages/PostPage/PostPage';
 import NewPostPage from './pages/NewPostPage/NewPostPage';
 import PostDetailPage from './pages/PostDetailPage/PostDetailPage';
 import Footer from './components/Footer/Footer';
+import ProfilePageId from './pages/ProfilePageId/ProfilePageId';
 
 function App() {
   return (
@@ -27,6 +28,15 @@ function App() {
           element={
             <IsPrivate>
               <ProfilePage />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path='/profile/:userId'
+          element={
+            <IsPrivate>
+              <ProfilePageId />
             </IsPrivate>
           }
         />

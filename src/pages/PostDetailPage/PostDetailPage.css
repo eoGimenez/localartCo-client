@@ -10,7 +10,12 @@
   margin-bottom: 2.4rem;
 }
 
-.post--detail--buttons--owner button {
+.post--detail--contact {
+  margin-bottom: 2.4rem;
+}
+
+.post--detail--buttons--owner button,
+.post--detail--contact button {
   display: inline-block;
   border: none;
   font-family: 'Poppins', sans-serif;
@@ -25,7 +30,8 @@
   transition: all 0.3s;
 }
 
-.post--detail--buttons--owner button:hover {
+.post--detail--buttons--owner button:hover,
+.post--detail--contact button:hover {
   background-color: var(--primary-dark);
   color: var(--lighter-font);
 }

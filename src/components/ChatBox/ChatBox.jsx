@@ -4,12 +4,12 @@ import Talk from 'talkjs';
 import './ChatBox.css';
 
 export default function ChatBox({
-  author: { _id, commerceName, email, image },
+  author: { _id, commerceName, email, avatar },
 }) {
+  console.log(_id, commerceName, email, avatar);
   const inBoxDiv = useRef();
   const [talkLoaded, setTalkLoaded] = useState(false);
   const { userCont } = useContext(UserContext);
-
   Talk.ready.then((result) => setTalkLoaded(true));
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function ChatBox({
         id: userCont._id,
         name: userCont.commerceName,
         email: userCont.email,
-        photoUrl: userCont.image,
+        photoUrl: userCont.avatar,
         welcomeMessage: 'Hello!',
         role: 'defaul',
       });
@@ -26,7 +26,7 @@ export default function ChatBox({
         id: _id,
         name: commerceName,
         email,
-        photoUrl: image,
+        photoUrl: avatar,
         welcomeMessage: 'Hello!',
         role: 'defaul',
       });

@@ -45,6 +45,7 @@ export default function NewPostForm() {
         <fieldset>
           {!value && <input type='file' onChange={onChange} required />}
           {value && <h3>Imagen correcta</h3>}
+          {value && <img src={value} alt='Imagen cargada para el articulo' />}
         </fieldset>
         <fieldset>
           <select {...contract} required>
@@ -65,7 +66,6 @@ export default function NewPostForm() {
         </fieldset>
         <button>Crear articulo</button>
       </form>
-      {value && <img src={value} alt='Imagen cargada para el articulo' />}
     </div>
   );
 }

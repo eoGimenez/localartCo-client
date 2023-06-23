@@ -26,7 +26,7 @@ function ProfilePage() {
 
   return (
     <section className='section--profile'>
-      {userCont && !firstOn && <Profile userCont={userCont} />}
+      {userCont && !firstOn && <Profile userProf={userCont} />}
       {userCont &&
         !firstOn &&
         userCont.posts

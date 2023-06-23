@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './Profile.css';
 import FormUser from '../FormUser/FormUser';
+import { UserContext } from '../../../context/user.context';
 
-export default function Profile({ userCont }) {
+export default function Profile({ userProf }) {
   const [update, setUpdate] = useState('');
+  const { userCont } = useContext(UserContext);
 
   const handleUpdatePerfil = () => {
     setUpdate(!update);
@@ -13,24 +15,29 @@ export default function Profile({ userCont }) {
       {!update && (
         <>
           <h2>
-            {userCont.name} {userCont.surname}
+            {userProf.name} {userProf.surname}
           </h2>
           <div className='profile--img--container'>
             <img
-              src={userCont.avatar}
-              alt={userCont.commerceName + `'s perfil image`}
+              src={userProf.avatar}
+              alt={userProf.commerceName + `'s perfil image`}
             />
           </div>
           <div className='profile--info--container'>
-            <h3>{userCont.email}</h3>
-            <h3>{userCont.commerceName}</h3>
-            <h4>{userCont.cif}</h4>
-            <p>{userCont.aboutme}</p>
-            <p>{userCont.location}</p>
+            <h3>{userProf.email}</h3>
+            <h3>{userProf.commerceName}</h3>
+            <h4>{userProf.cif}</h4>
+            <p>{userProf.aboutme}</p>
+            <p>{userProf.location}</p>
           </div>
-          <p className='btn btn--update--profile' onClick={handleUpdatePerfil}>
-            Editar Perfil
-          </p>
+          {userCont && userProf && userCont._id === userProf._id ? (
+            <p
+              className='btn btn--update--profile'
+              onClick={handleUpdatePerfil}
+            >
+              Editar Perfil
+            </p>
+          ) : null}
         </>
       )}
       {update && <FormUser />}

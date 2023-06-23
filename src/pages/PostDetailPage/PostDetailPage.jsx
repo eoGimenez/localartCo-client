@@ -1,7 +1,7 @@
 import PostDetail from '../../components/Posts/PostDetail/PostDetail';
 import { useContext, useEffect, useState } from 'react';
 import { usePosts } from '../../hooks/usePosts';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { UserContext } from '../../context/user.context';
 import PostUpdate from '../../components/Posts/PostUpdate/PostUpdate';
 import ChatBox from '../../components/ChatBox/ChatBox';
@@ -12,6 +12,7 @@ export default function PostDetailPage() {
   const { postId } = useParams();
   const { deletPost, getPost, currentPost } = usePosts();
   const { userCont } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleDelete = () => {
     deletPost(postId).catch(() => console.log('no se pudo borrar'));
@@ -43,9 +44,21 @@ export default function PostDetailPage() {
             </div>
           ) : null}
           {currentPost && currentPost.author._id !== userCont._id ? (
-            <div className='post--detail--buttons--noOwner'>
-              <ChatBox author={currentPost.author} />
-            </div>
+            <>
+              <div className='post--detail--buttons--noOwner'>
+                <ChatBox author={currentPost.author} />
+              </div>
+
+              <div className='post--detail--contact'>
+                <button
+                  onClick={() => {
+                    navigate(`/profile/${currentPost.author._id}`);
+                  }}
+                >
+                  Perfil de {currentPost.author.commerceName}
+                </button>
+              </div>
+            </>
           ) : null}
         </>
       )}

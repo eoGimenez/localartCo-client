@@ -55,5 +55,7 @@
     grid-column: 1/-1;
     max-width: 70rem;
     padding-inline: 4rem;
+    margin-inline: auto;
+    min-width: 45rem;
   }
 }
