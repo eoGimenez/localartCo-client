@@ -9,6 +9,7 @@ export default function PostCard({ post }) {
   return (
     <div className='post--card' onClick={handleClick}>
       <div className='image--container'>
+        {!post.available && <div className='post--card--outstock'></div>}
         <img src={post.image} alt={'La imagen del articulo: ' + post.title} />
       </div>
       <div className='card--container'>

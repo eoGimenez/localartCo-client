@@ -2,13 +2,17 @@ import { Link } from 'react-router-dom';
 import './PostDetail.css';
 
 export default function PostDetail({ currentPost }) {
+  console.log(currentPost);
   return (
     <>
       {currentPost && (
         <div className='post--detail--container'>
-          <h1>Detalle del post</h1>
+          <h1>Articulo</h1>
           <h2>{currentPost.title}</h2>
           <div className='detail--image--container'>
+            {!currentPost.available && (
+              <div className='post--card--outstock'></div>
+            )}
             <img
               className='detail--image'
               src={currentPost.image}

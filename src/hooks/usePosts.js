@@ -63,7 +63,7 @@ export function usePosts() {
   };
 
   const updatePost = async (
-    postId,
+    { postId },
     { title, batch, category, contract, description, price, image }
   ) => {
     return postService

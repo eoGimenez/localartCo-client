@@ -18,14 +18,14 @@ export default function PostUpdate({ currentPost, handleForm }) {
 
   const handleUpdatePost = (e) => {
     e.preventDefault();
-    updatePost(currentPost._id, {
+    updatePost({postId : currentPost._id}, {
       title: title.value,
       batch: batch.value,
       category: category.value,
       contract: contract.value,
       description: description.value,
       price: price.value,
-      image: value,
+      image: currentPost.image || value,
     });
   };
 
@@ -50,7 +50,9 @@ export default function PostUpdate({ currentPost, handleForm }) {
           <input {...price} placeholder={price.value} required />
         </fieldset>
         <fieldset>
-          {!value && <input type='file' onChange={onChange} required />}
+          {!currentPost.image && !value && (
+            <input type='file' onChange={onChange} required />
+          )}
           {value && <img src={value} alt='The new file selected' />}
           {currentPost.image && !value && (
             <img
