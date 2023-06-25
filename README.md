@@ -30,24 +30,38 @@ $ npm start
 | /                    | public          | Home.page                |
 | /signup              | public          | Signup.page              |
 | /login               | public          | Login.page               |
-| /user/:userId        | private (user)  | Profile.page             |
-| /post                | private (user)  | Posts.page               |
+| /profile             | private (user)  | Profile.page             |
+| /profile/:userId     | private (user)  | Profile.page             |
+| /posts               | private (user)  | Posts.page               |
 | /post/:postId.       | private (user)  | PostDetails.page         |
 | /post/new            | private (user)  | PostNew.page             |
 | /logout              | private (user)  | Home.page                |
 
 
 ## Components
-- UserForm
-- CommerceForm
+- FormUser
+- Profile
+- Footer
+- Loading
 - Navbar
 - Inbox
 - Navbar
 - Categorias
 - ChatBox
-- PosEdit
+- InBox
+- NewPostForm
+- PostCard
+- PostDetail
+- PostFilter
+- PostUpdate
 - IsPrivate
+- IsAnon
 - HomeVideo
 
+##CustomHooks
+- useCategory
+- useField
+- useFile
+- usePosts
 
 ---
