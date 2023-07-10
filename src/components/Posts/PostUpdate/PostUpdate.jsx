@@ -18,15 +18,18 @@ export default function PostUpdate({ currentPost, handleForm }) {
 
   const handleUpdatePost = (e) => {
     e.preventDefault();
-    updatePost({postId : currentPost._id}, {
-      title: title.value,
-      batch: batch.value,
-      category: category.value,
-      contract: contract.value,
-      description: description.value,
-      price: price.value,
-      image: currentPost.image || value,
-    });
+    updatePost(
+      { postId: currentPost._id },
+      {
+        title: title.value,
+        batch: batch.value,
+        category: category.value,
+        contract: contract.value,
+        description: description.value,
+        price: price.value,
+        image: currentPost.image || value,
+      }
+    );
   };
 
   return (

@@ -50,6 +50,10 @@
   color: var(--lighter-font);
 }
 
+#text--align--center {
+  text-align: center;
+}
+
 @media (min-width: 87.5em) {
   .section--form--user {
     grid-column: 1/-1;

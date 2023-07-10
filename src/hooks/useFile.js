@@ -1,26 +1,45 @@
 import { useState } from 'react';
 import PostService from '../services/post.service';
 
-export function useFile({ type }) {
+export function useFile() {
   const postService = new PostService();
-  const [value, setValue] = useState('');
+  const [image, setImage] = useState(null);
+  const [status, setStatus] = useState({});
+  const [isLoadingImg, setIsLoadingImg] = useState(false);
 
-  const onChange = function handleImage(e) {
+  const onChange = (e) => {
+    handleImage(e.target.files[0]);
+  };
+
+  const handleDrag = (e) => {
+    e.preventDefault();
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    handleImage(e.dataTransfer.files[0]);
+  };
+
+  function handleImage(file) {
+    setIsLoadingImg(true);
     const uploadData = new FormData();
-    uploadData.append('image', e.target.files[0]);
+    uploadData.append('image', file);
     postService
       .uploadFile(uploadData)
       .then((response) => {
-        const fileUrl = response.data.fileUrl;
-        setValue(fileUrl);
+        console.log(response.data.fileUrl);
+        setStatus({ message: 'The file was successfully uploaded' });
+        setImage(response.data.fileUrl);
+        setIsLoadingImg(!isLoadingImg);
       })
-      .catch((err) =>
-        console.log(
-          'Error while uploading the image: ',
-          err.response.data.message
-        )
-      );
-  };
+      .catch((err) => {
+        setStatus({
+          message: 'Ocurrió un error de red, por favor, inténtalo nuevamente',
+          codeError: err,
+        });
+        setIsLoadingImg(!isLoadingImg);
+      });
+  }
 
-  return { type, value, onChange };
+  return { image, status, isLoadingImg, onChange, handleDrag, handleDrop };
 }

@@ -18,6 +18,10 @@
   --primary-font: #555;
   --darker-font: #333;
   --lighter-font: #ddd;
+  --gray-font: #bdbdbd;
+
+  --drag--border: #97bef4;
+  --drag--back: #f6f8fb;
 }
 html {
   font-size: 62.5%;
