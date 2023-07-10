@@ -1,6 +1,10 @@
 # LocalArtCo - client side
+<<<<<<< HEAD
 
 Developed of our final proyect at IronHack. It's a MERN Stack application, check the frontend repository [here](https://github.com/eoGimenez/fair-trade-client).
+=======
+Developed of our final proyect at IronHack. It's a MERN Stack application, check the frontend repository [here](https://github.com/eoGimenez/localartCo-server).
+>>>>>>> f4857a10c3a721d0bfbbfdf90701b3a0a01d853b
 
 ## About
 
@@ -11,8 +15,12 @@ Local Art Co. connects artisans with physical stores. Artisans leave their produ
 ![Project Image](https://res.cloudinary.com/dxk04cijr/image/upload/v1678989961/localartco/navbarlogo_bjkqoq.png 'Project Image')
 
 ## Deployment
+<<<<<<< HEAD
 
 You can check the app fully deployed [here](localartco.netlify.app. If you wish to view the API deployment instead, check [here](fairtrade.fly.dev).
+=======
+You can check the app fully deployed [here](localartco.netlify.app. If you wish to view the API deployment instead, check [here](https://localartco.netlify.app/login).
+>>>>>>> f4857a10c3a721d0bfbbfdf90701b3a0a01d853b
 
 ## Work structure
 
