@@ -169,7 +169,7 @@ export default function FormUser() {
                         fill='#CCCCCC'
                       />
                     </svg>
-                    <p>Drag & Drop your image here</p>
+                    <p id='text--align--center'>Drag & Drop your image here</p>
                   </div>
                   <h3 id='text--align--center'>Or</h3>
                   <label

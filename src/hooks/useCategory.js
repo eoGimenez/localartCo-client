@@ -5,6 +5,7 @@ export function useCategory() {
   const [category, setCategory] = useState('');
   const [postFiltered, setPostFiltered] = useState(null);
   const { posts } = usePosts();
+  
   const pickCategory = (selectedCategory) => {
     setCategory((prevCategory) => {
       const newCategory =

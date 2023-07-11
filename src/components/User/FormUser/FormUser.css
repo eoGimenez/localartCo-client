@@ -54,6 +54,12 @@
   text-align: center;
 }
 
+@media (min-width: 62em) {
+  .uploader--container {
+    padding: 0 !important;
+  }
+}
+
 @media (min-width: 87.5em) {
   .section--form--user {
     grid-column: 1/-1;

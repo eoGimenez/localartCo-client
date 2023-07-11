@@ -170,7 +170,7 @@ export default function NewPostForm() {
                       fill='#CCCCCC'
                     />
                   </svg>
-                  <p>Drag & Drop your image here</p>
+                  <p id='text--align--center'>Drag & Drop your image here</p>
                 </div>
                 <h3>Or</h3>
                 <label htmlFor='fileInput' className='img--buttom--decoration'>
