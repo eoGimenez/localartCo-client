@@ -57,7 +57,7 @@
 }
 
 .path--parraf {
-  width: 15rem;
+  width: 25ch;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

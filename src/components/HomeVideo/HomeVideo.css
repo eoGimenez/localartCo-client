@@ -5,3 +5,10 @@
 .home--video {
   width: 100%;
 }
+
+@media (min-width: 58em) {
+  .section--homevideo {
+    height: 55rem;
+    overflow: hidden;
+  }
+}

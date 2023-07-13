@@ -50,9 +50,6 @@
   color: var(--lighter-font);
 }
 
-#text--align--center {
-  text-align: center;
-}
 
 @media (min-width: 62em) {
   .uploader--container {
