@@ -8,6 +8,7 @@ export function usePosts() {
   const [posts, setPosts] = useState([]);
   const [currentPost, setCurrentPost] = useState(null);
   const [messageError, setMessageError] = useState('');
+  const [statusPost, setStatusPost] = useState('');
   const postService = new PostService();
   const navigate = useNavigate();
 
@@ -20,9 +21,15 @@ export function usePosts() {
 
   const getPost = async (postId) => {
     if (!currentPost) {
-      return postService.getOne(postId).then((response) => {
-        setCurrentPost(response.data);
-      });
+      return postService
+        .getOne(postId)
+        .then((response) => {
+          setCurrentPost(response.data);
+        })
+        .catch((err) => {
+          console.log(err.response.data.message);
+          setStatusPost('Se produjo un error, intentelo nuevamete');
+        });
     }
   };
 
@@ -50,7 +57,12 @@ export function usePosts() {
         price,
         image,
       })
-      .then((result) => navigate('/posts'));
+      .then((result) => navigate('/posts'))
+      .catch((err) => {
+        console.log(err.response.data.message);
+
+        setStatusPost(err);
+      });
   };
 
   const deletPost = async (postId) => {
@@ -85,11 +97,12 @@ export function usePosts() {
 
   return {
     posts,
+    statusPost,
+    currentPost,
+    messageError,
     createPost,
     deletPost,
     getPost,
     updatePost,
-    currentPost,
-    messageError,
   };
 }

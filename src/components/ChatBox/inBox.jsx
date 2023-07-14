@@ -20,7 +20,8 @@ export default function InBox() {
         name: userCont.commerceName,
         email: userCont.email,
         photoUrl: userCont.image,
-        welcomeMessage: 'Hello!',
+        welcomeMessage:
+          'Esta conversación es privada. No obstante, evita enviar información sensible. LocalArt CO no se hace responsable de los datos tratados entre usuarios.',
         role: 'defaul',
       });
 

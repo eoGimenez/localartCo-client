@@ -15,7 +15,7 @@ export default function NewPostForm() {
   const price = useField({ type: 'number', field: '' });
   const { image, isLoadingImg, onChange, status, handleDrag, handleDrop } =
     useFile();
-  const { createPost } = usePosts();
+  const { createPost, statusPost } = usePosts();
 
   const handleNewPost = async (e) => {
     e.preventDefault();
@@ -27,7 +27,7 @@ export default function NewPostForm() {
       description: description.value,
       price: price.value,
       image: image || null,
-    }).catch(() => console.log('error al crear post'));
+    }).catch(() => console.log(statusPost));
   };
 
   return (

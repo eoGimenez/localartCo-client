@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import './PostDetail.css';
 
 export default function PostDetail({ currentPost }) {
-  console.log(currentPost);
   return (
     <>
       {currentPost && (

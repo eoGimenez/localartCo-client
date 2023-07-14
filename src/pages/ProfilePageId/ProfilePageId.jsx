@@ -12,7 +12,6 @@ export default function ProfilePageId() {
     userService
       .getOne(userId)
       .then((result) => {
-        console.log(result);
         setUserProfile(result.data);
       })
       .catch((err) => console.log(err));

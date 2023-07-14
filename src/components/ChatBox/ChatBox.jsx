@@ -6,7 +6,6 @@ import './ChatBox.css';
 export default function ChatBox({
   author: { _id, commerceName, email, avatar },
 }) {
-  console.log(_id, commerceName, email, avatar);
   const inBoxDiv = useRef();
   const [talkLoaded, setTalkLoaded] = useState(false);
   const { userCont } = useContext(UserContext);
@@ -19,7 +18,8 @@ export default function ChatBox({
         name: userCont.commerceName,
         email: userCont.email,
         photoUrl: userCont.avatar,
-        welcomeMessage: 'Hello!',
+        welcomeMessage:
+          'Esta conversación es privada. No obstante, evita enviar información sensible. LocalArt CO no se hace responsable de los datos tratados entre usuarios.',
         role: 'defaul',
       });
       const contactedUser = new Talk.User({
@@ -27,7 +27,8 @@ export default function ChatBox({
         name: commerceName,
         email,
         photoUrl: avatar,
-        welcomeMessage: 'Hello!',
+        welcomeMessage:
+          'Esta conversación es privada. No obstante, evita enviar información sensible. LocalArt CO no se hace responsable de los datos tratados entre usuarios.',
         role: 'defaul',
       });
 

@@ -27,7 +27,6 @@ export function useFile() {
     postService
       .uploadFile(uploadData)
       .then((response) => {
-        console.log(response.data.fileUrl);
         setStatus({ message: 'The file was successfully uploaded' });
         setImage(response.data.fileUrl);
         setIsLoadingImg(!isLoadingImg);
