@@ -62,7 +62,7 @@
 }
 @media (min-width: 34em) {
   .post--card {
-    max-width: 44rem;
+    min-width: 44rem;
   }
   .image--container img {
     max-width: 30rem;
